@@ -1,34 +1,9 @@
 # AI Nudging for Sustainable Tourism: Mechanisms, Boundaries, and Ethical Implications
-The Challenge
-Tourism is rebounding fast, but sustainability is lagging. While traditional nudges like defaults have helped, they are reaching their limits. AI now offers hyper-personalized interventions. But are they truly more effective? And do they compromise consumer autonomy?
-What We Tested
-This research moves beyond simple effectiveness to uncover the “how” and “when”:
-Performance:​ Does AI nudging outperform traditional methods in driving green choices?
-Mechanism:​ Does perceived relevance explain the effect?
-Boundaries:​ Does it backfire under low autonomy or when the AI is disclosed?
-Alignment:​ Does it only work if users believe the AI serves their goals, not just the company’s profit?
-The Approach
-We combined three methods for robust results:
-Natural Experiment:​ Using Difference-in-Differences (DiD) analysis on real platform data.
-Controlled Studies:​ Testing psychological triggers in a lab setting.
-Field Test:​ Deploying nudges via a travel agency to observe actual booking behavior.
-The Bottom Line
-The findings provide a roadmap for businesses and policymakers to design AI systems that are not only effective but also ethical and autonomy-respecting.
-核心挑戰
-旅遊業強勁復甦，但可持續發展進度滯後。傳統助推（如預設選項）雖有成效，卻已遭遇瓶頸。AI 提供了極致個人化的干預手段。但它真的更有效嗎？是否會犧牲消費者的自主性？
-研究重點
-本研究不只探討「是否有效」，更深入解析「如何生效」及「何時生效」：
-成效比較：​ AI 助推是否優於傳統助推？
-作用機制：​ 感知相關性是否為關鍵媒介？
-邊界條件：​ 在低自主性或被揭露為 AI 時，是否會產生反效果？
-目標一致性：​ 是否只有在用戶認為 AI 符合自身利益（而非商家利潤）時才有效？
+The Challenge Tourism is rebounding fast, but sustainability is lagging. While traditional nudges like defaults have helped, they are reaching their limits. AI now offers hyper-personalized interventions. But are they truly more effective? And do they compromise consumer autonomy? What We Tested This research moves beyond simple effectiveness to uncover the “how” and “when”: Performance:​ Does AI nudging outperform traditional methods in driving green choices? Mechanism:​ Does perceived relevance explain the effect? Boundaries:​ Does it backfire under low autonomy or when the AI is disclosed? Alignment:​ Does it only work if users believe the AI serves their goals, not just the company’s profit? The Approach We combined three methods for robust results: Natural Experiment:​ Using Difference-in-Differences (DiD) analysis on real platform data. Controlled Studies:​ Testing psychological triggers in a lab setting. Field Test:​ Deploying nudges via a travel agency to observe actual booking behavior. The Bottom Line The findings provide a roadmap for businesses and policymakers to design AI systems that are not only effective but also ethical and autonomy-respecting. 核心挑戰
+旅遊業強勁復甦，但可持續發展進度滯後。傳統助推（如預設選項）雖有成效，卻已遭遇瓶頸。AI 提供了極致個人化的干預手段。但它真的更有效嗎？是否會犧牲消費者的自主性？ 研究重點 本研究不只探討「是否有效」，更深入解析「如何生效」及「何時生效」：
+成效比較：​ AI 助推是否優於傳統助推？ 作用機制：​ 感知相關性是否為關鍵媒介？ 邊界條件：​ 在低自主性或被揭露為 AI 時，是否會產生反效果？ 目標一致性：​ 是否只有在用戶認為 AI 符合自身利益（而非商家利潤）時才有效？
 研究方法
-採用三重驗證以確保結果嚴謹：
-自然實驗：​ 運用雙重差分法（DiD）分析真實平台數據。
-控制實驗：​ 在實驗室環境下檢驗心理機制。
-實地測試：​ 與旅行社合作，觀察真實的預訂決策行為。
-實質影響
-研究成果旨在為業界與政策制定者提供具體指引，協助設計既高效又合乎倫理、同時尊重用戶自主權的 AI 系統。
+採用三重驗證以確保結果嚴謹： 自然實驗：​ 運用雙重差分法（DiD）分析真實平台數據。 控制實驗：​ 在實驗室環境下檢驗心理機制。 實地測試：​ 與旅行社合作，觀察真實的預訂決策行為。 實質影響 研究成果旨在為業界與政策制定者提供具體指引，協助設計既高效又合乎倫理、同時尊重用戶自主權的 AI 系統。
 (i) Full version — This research project (Project Number: 2025.B16.018.25D) is funded by the Public Policy Research Funding Scheme / Strategic Public Policy Research Funding Scheme of The Government of the Hong Kong Special Administrative Region (project in progress); or
 (ii) Short-form for non-academic publication — This research project is funded by the Public Policy Research Funding Scheme / Strategic Public Policy Research Funding Scheme of The Government of the HKSAR (project in progress).
 (iii)Any information, opinions, findings, conclusions or recommendations expressed in this material/event (or by members of the research team) do not represent the views of The Government of the Hong Kong Special Administrative Region and/or the Assessment Panel.
