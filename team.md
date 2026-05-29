@@ -22,14 +22,6 @@ This research is led by an academic team at Hong Kong Metropolitan University (H
 - **Affiliation**: Hong Kong Metropolitan University (HKMU)
 - **Responsibilities**: Study implementation and literature review.
 
----
-### Research Assistant
-- **Name**: Jiaqi LI
-- **Role**: Research Assistant
-- **Email**: jqli@hkmu.edu.hk
-- **Affiliation**: Hong Kong Metropolitan University (HKMU)
-- **Responsibilities**: Supporting data collection,data analysis and Web page creation.
-
 - ---
 ### Contact
 For any inquiries about the team or the research project, please reach out to the project lead via email at **huliu@hkmu.edu.hk**.
