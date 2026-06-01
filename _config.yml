@@ -1,13 +1,13 @@
 # 基础配置
 title: "AINudge-HKTourism"
 description: "AI Nudging for Sustainable Tourism Research"
-baseurl: "/AINudge-HKTourism"
-url: "https://ainudgingppr-spec.github.io"
+baseurl: "/AINudge-HKTourism"  
+url: "https://ainudgingppr-spec.github.io"  # 你的 GitHub Pages 域名
 
-# 主题配置（GitHub Pages 官方兼容）
+# 主题配置（和示例保持一致）
 remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 
-# 启用侧边栏导航（主题标准格式）
+# 全局页面默认设置
 defaults:
   - scope:
       path: ""
@@ -17,7 +17,7 @@ defaults:
       sidebar:
         nav: "main"
 
-# 导航菜单定义
+# 导航菜单（和你的页面对应）
 nav:
   main:
     - title: "首頁 / Home"
@@ -27,11 +27,19 @@ nav:
     - title: "團隊 / Team"
       url: /team/
 
-# 必要依赖配置
+# Jekyll 依赖与插件配置
 markdown: kramdown
 highlighter: rouge
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 排除不必要的文件
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
+  - README.md
+  - Study2.py
