@@ -1,3 +1,8 @@
+---
+layout: single
+title: 團隊 / Team
+permalink: /team/
+---
 # Team
 
 ## AI Nudging for Sustainable Tourism Project Team
