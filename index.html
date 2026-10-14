@@ -8,40 +8,80 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <script src="language.js" defer></script>
+    <style>
+        /* Embedded Toolkit View Styles */
+        #toolkit-embed-section {
+            display: none;
+            flex-direction: column;
+            height: calc(100vh - 4rem);
+            min-height: 720px;
+            width: 100%;
+        }
+        .toolkit-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem 0;
+        }
+        .toolkit-toolbar h2 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        .toolkit-frame-wrapper {
+            flex: 1;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            background: #0f172a;
+        }
+        .toolkit-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <a class="skip-link" href="#main-content"><span class="lang-en">Skip to content</span><span class="lang-zh">跳至主要內容</span></a>
-    <div class="layout">
-        <aside class="sidebar" aria-label="Site navigation">
-            <div class="brand">
-                <div class="brand-wordmark">AI4Sustainability</div>
-                <div>
-                    <div class="brand-title"><span class="lang-en">AI Nudging for Sustainable Consumer Behaviour</span><span class="lang-zh">人工智能助推與可持續消費行為</span></div>
-                    <div class="brand-subtitle"><span class="lang-en">in the Tourism and Hospitality Industry in Hong Kong.</span><span class="lang-zh">香港旅遊及酒店業研究</span></div>
-                </div>
+<a class="skip-link" href="#main-content"><span class="lang-en">Skip to content</span><span class="lang-zh">跳至主要內容</span></a>
+<div class="layout">
+    <aside class="sidebar" aria-label="Site navigation">
+        <div class="brand">
+            <div class="brand-wordmark">AI4Sustainability</div>
+            <div>
+                <div class="brand-title"><span class="lang-en">AI Nudging for Sustainable Consumer Behaviour</span><span class="lang-zh">人工智能助推與可持續消費行為</span></div>
+                <div class="brand-subtitle"><span class="lang-en">in the Tourism and Hospitality Industry in Hong Kong.</span><span class="lang-zh">香港旅遊及酒店業研究</span></div>
             </div>
-            <a class="hkmu-logo-link" href="https://www.hkmu.edu.hk/" target="_blank" rel="noopener noreferrer" aria-label="Hong Kong Metropolitan University website">
-                <img class="hkmu-logo" src="assets/hkmu-logo.png" alt="Hong Kong Metropolitan University logo">
-            </a>
-            <div class="language-switch" aria-label="Language switch">
-                <button type="button" data-lang-button="en" aria-pressed="true">EN</button>
-                <button type="button" data-lang-button="zh-Hant" aria-pressed="false">繁中</button>
-                <button type="button" data-lang-button="zh-Hans" aria-pressed="false">简中</button>
-            </div>
-            <div class="nav-label"><span class="lang-en">Navigation</span><span class="lang-zh">導航</span></div>
-            <nav>
-                <ul>
-                    <li><a class="active" aria-current="page" href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a></li>
-                    <li><a href="about.html"><span class="lang-en">About</span><span class="lang-zh">關於</span></a></li>
-                    <li><a href="team.html"><span class="lang-en">Team</span><span class="lang-zh">團隊</span></a></li>
-                    <li><a href="updates.html"><span class="lang-en">Updates</span><span class="lang-zh">項目進展</span></a></li>
-                    <li><a href="impact.html"><span class="lang-en">Potential Impact</span><span class="lang-zh">潛在影響</span></a></li>
-                    <li><a href="engage.html"><span class="lang-en">Engage</span><span class="lang-zh">合作交流</span></a></li>
-                </ul>
-            </nav>
-        </aside>
+        </div>
+        <a class="hkmu-logo-link" href="https://www.hkmu.edu.hk/" target="_blank" rel="noopener noreferrer" aria-label="Hong Kong Metropolitan University website">
+            <img class="hkmu-logo" src="assets/hkmu-logo.png" alt="Hong Kong Metropolitan University logo">
+        </a>
+        <div class="language-switch" aria-label="Language switch">
+            <button type="button" data-lang-button="en" aria-pressed="true">EN</button>
+            <button type="button" data-lang-button="zh-Hant" aria-pressed="false">繁中</button>
+            <button type="button" data-lang-button="zh-Hans" aria-pressed="false">简中</button>
+        </div>
+        <div class="nav-label"><span class="lang-en">Navigation</span><span class="lang-zh">導航</span></div>
+        <nav>
+            <ul>
+                <li><a id="nav-home" class="active" aria-current="page" href="index.html" onclick="showHomeContent(event)"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a></li>
+                <li><a href="about.html"><span class="lang-en">About</span><span class="lang-zh">關於</span></a></li>
+                <li><a href="team.html"><span class="lang-en">Team</span><span class="lang-zh">團隊</span></a></li>
+                <li><a href="updates.html"><span class="lang-en">Updates</span><span class="lang-zh">項目進展</span></a></li>
+                <li><a href="impact.html"><span class="lang-en">Potential Impact</span><span class="lang-zh">潛在影響</span></a></li>
+                <li><a href="engage.html"><span class="lang-en">Engage</span><span class="lang-zh">合作交流</span></a></li>
+                <!-- 新增的 AI Toolkit 導航選項 -->
+                <li><a id="nav-toolkit" href="#toolkit" onclick="showToolkitContent(event)"><span class="lang-en">AI Toolkit</span><span class="lang-zh">AI 助推工具包</span></a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <main class="content" id="main-content">
+    <main class="content" id="main-content">
+        <!-- 原有的主頁內容包在 #home-sections 中 -->
+        <div id="home-sections">
             <section class="hero" aria-label="Exploring the Dual Effects of Artificial Intelligence Nudging">
                 <div class="hero-content">
                     <p class="eyebrow"><span class="lang-en">Public Policy Research (PPR) Funding Scheme</span><span class="lang-zh">公共政策研究資助計劃</span></p>
@@ -63,6 +103,7 @@
                     <p class="lede"><span class="lang-en">This project studies AI nudging for sustainable behaviour in Hong Kong’s tourism and hospitality industry, with emphasis on effective and ethical AI nudge design for sustainable consumer behaviour.</span><span class="lang-zh">本項目研究香港旅遊及酒店業中的人工智能助推，並強調有效且合乎倫理的 AI 助推設計，以促進可持續消費行為。</span></p>
                     <div class="hero-actions">
                         <a class="button primary" href="https://www.cepu.gov.hk/en/PRFS/index.html" target="_blank" rel="noopener noreferrer"><span class="lang-en">PPR Official Website</span><span class="lang-zh">PPR 官方網站</span></a>
+                        <a class="button" href="#toolkit" onclick="showToolkitContent(event)"><span class="lang-en">Launch AI Toolkit</span><span class="lang-zh">啟動 AI 助推工具包</span></a>
                     </div>
                 </div>
             </section>
@@ -84,7 +125,73 @@
                 <p class="lang-en">Any information, opinions, findings, conclusions or recommendations expressed on this website do not represent the views of The Government of the Hong Kong Special Administrative Region and/or the Assessment Panel.</p>
                 <p class="lang-zh">本網站所載任何資料、意見、研究結果、結論或建議，並不代表香港特別行政區政府及／或評審委員會的觀點。</p>
             </section>
-        </main>
-    </div>
+        </div>
+
+        <!-- 內嵌 Vercel Web App 的區塊 -->
+        <section id="toolkit-embed-section" aria-label="AI Nudge Toolkit">
+            <div class="toolkit-toolbar">
+                <h2>
+                    <span class="lang-en">AI Nudge Toolkit</span>
+                    <span class="lang-zh">AI 助推工具包</span>
+                </h2>
+                <a class="button primary" href="https://ai-nudge-toolkit.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <span class="lang-en">Open Fullscreen ↗</span>
+                    <span class="lang-zh">全屏開啟 ↗</span>
+                </a>
+            </div>
+            <div class="toolkit-frame-wrapper">
+                <iframe
+                        class="toolkit-iframe"
+                        src="https://ai-nudge-toolkit.vercel.app/"
+                        title="AI Nudge Toolkit"
+                        allow="clipboard-write"
+                        loading="lazy">
+                </iframe>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script>
+    function showToolkitContent(event) {
+        if (event) event.preventDefault();
+        document.getElementById('home-sections').style.display = 'none';
+        document.getElementById('toolkit-embed-section').style.display = 'flex';
+
+        document.getElementById('nav-home').classList.remove('active');
+        document.getElementById('nav-home').removeAttribute('aria-current');
+        document.getElementById('nav-toolkit').classList.add('active');
+        document.getElementById('nav-toolkit').setAttribute('aria-current', 'page');
+
+        history.pushState({ view: 'toolkit' }, '', '#toolkit');
+    }
+
+    function showHomeContent(event) {
+        if (event) event.preventDefault();
+        document.getElementById('toolkit-embed-section').style.display = 'none';
+        document.getElementById('home-sections').style.display = 'block';
+
+        document.getElementById('nav-toolkit').classList.remove('active');
+        document.getElementById('nav-toolkit').removeAttribute('aria-current');
+        document.getElementById('nav-home').classList.add('active');
+        document.getElementById('nav-home').setAttribute('aria-current', 'page');
+
+        history.pushState({ view: 'home' }, '', 'index.html');
+    }
+
+    // 支援網址帶有 #toolkit 或瀏覽器上一頁/下一頁自動切換
+    window.addEventListener('DOMContentLoaded', () => {
+        if (window.location.hash === '#toolkit') {
+            showToolkitContent();
+        }
+    });
+    window.addEventListener('popstate', () => {
+        if (window.location.hash === '#toolkit') {
+            showToolkitContent();
+        } else {
+            showHomeContent();
+        }
+    });
+</script>
 </body>
 </html>
