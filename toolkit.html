@@ -10,7 +10,14 @@
     <link rel="manifest" href="site.webmanifest">
     <script src="language.js" defer></script>
     <style>
-        /* Minimal layout utilities & text color resets to prevent white-on-light text */
+        /* 1. 全域定義 --text 變數，徹底消除 Cannot resolve 警告 */
+        :root {
+            --text: #1e293b;
+            --text-muted: #475569;
+            --border-color: rgba(15, 23, 42, 0.25);
+        }
+
+        /* Minimal layout utilities & text color resets */
         .tk-step {
             display: none;
         }
@@ -18,7 +25,7 @@
             display: block;
         }
 
-        /* 強制將淺色面板 (.panel) 內的所有文字與卡片改回系統預設深色，解決白字重疊問題 */
+        /* 淺色面板基礎顏色重設 */
         .panel,
         .panel h2,
         .panel h3,
@@ -27,29 +34,66 @@
         .panel span,
         .panel strong,
         .panel div {
-            color: var(--text, #1e293b);
+            color: var(--text);
         }
 
-        /* 覆寫原本屬於深色 Hero 的 .project-fact 樣式，使其在淺色 .panel 內清晰顯示 */
         .panel .project-fact {
             background: rgba(15, 23, 42, 0.03);
             border: 1px solid rgba(15, 23, 42, 0.14);
-            color: var(--text, #1e293b);
+            color: var(--text);
         }
         .panel .project-fact strong,
         .panel .project-fact span {
-            color: var(--text, #1e293b);
+            color: var(--text);
         }
 
-        /* 確保次要按鈕在淺色面板上有清晰的深色文字與邊框 */
+        /* 次要按鈕樣式 */
         .panel .button:not(.primary) {
-            color: var(--text, #1e293b);
-            border: 1px solid rgba(15, 23, 42, 0.25);
-            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border-color);
+            background: #ffffff;
         }
-        .panel .button.primary,
-        .panel .button.primary span {
-            color: #ffffff;
+
+        /* 關鍵：Confirm & Generate 按鈕高對比樣式 */
+        #submitBtn,
+        .button.primary,
+        .panel .button.primary {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background-color: #0284c7 !important;
+            color: #ffffff !important;
+            border: 1px solid #0284c7 !important;
+            border-radius: 8px !important;
+            padding: 0.85rem 1.75rem !important;
+            font-size: 1rem !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3) !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease-in-out !important;
+            text-decoration: none !important;
+        }
+
+        #submitBtn:hover,
+        .button.primary:hover,
+        .panel .button.primary:hover {
+            background-color: #0369a1 !important;
+            border-color: #0369a1 !important;
+            box-shadow: 0 6px 20px rgba(3, 105, 161, 0.4) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        #submitBtn:disabled {
+            background-color: #94a3b8 !important;
+            border-color: #94a3b8 !important;
+            box-shadow: none !important;
+            cursor: not-allowed !important;
+            transform: none !important;
+        }
+
+        #submitBtn span,
+        .button.primary span {
+            color: #ffffff !important;
         }
 
         .tk-Interactive-card {
@@ -85,11 +129,11 @@
         .tk-textarea {
             width: 100%;
             padding: 0.7rem 0.85rem;
-            border: 1px solid rgba(15, 23, 42, 0.25);
+            border: 1px solid var(--border-color);
             border-radius: 6px;
             font: inherit;
             background: #ffffff;
-            color: var(--text, #1e293b);
+            color: var(--text);
             box-sizing: border-box;
         }
         .tk-input::placeholder,
@@ -108,7 +152,7 @@
             text-align: center;
             cursor: pointer;
             background: rgba(15, 23, 42, 0.02);
-            color: var(--text, #1e293b);
+            color: var(--text);
             transition: background 0.15s ease, border-color 0.15s ease;
         }
         .tk-file-zone:hover {
@@ -120,14 +164,14 @@
         }
         .tk-meta-note {
             font-size: 0.85rem;
-            color: #475569 !important;
+            color: var(--text-muted) !important;
             margin-top: 0.25rem;
         }
         .tk-result-pre {
             white-space: pre-wrap;
             line-height: 1.7;
             margin-top: 0.75rem;
-            color: var(--text, #1e293b);
+            color: var(--text);
         }
         .tk-header-row {
             display: flex;
