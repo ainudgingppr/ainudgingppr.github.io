@@ -19,7 +19,9 @@ Task:
 Based on the user preferences, choose up to 3 products from the database and recommend the user with detailed reasoning.
 
 Rules:
-For the recommendation message, output PLAIN TEXT only. No markdown, no quotes, no explanation.
+1. For the recommendation message, output PLAIN TEXT only. No markdown, no quotes, no explanation.
+2. Engineer the nudge message to demonstrate emphasis on user preference.
+3. The nudge message should show care, understanding instead of relying on cold messages like "referring to your preference / according to your instruction / etc".
 `;
 
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent`;

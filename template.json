@@ -48,7 +48,9 @@
         "origPrice": 2780,
         "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.4分口碑、4280+好评的理工大系设计地标，尖东站4分钟直达维港，78折含早餐泳池健身房，千元级五星性价比天花板。",
+    "nudgeEn": "PolyU's design-icon 5-star with 9.4 from 4,280+ reviews, 4-min walk to Victoria Harbour in TST East — breakfast, pool & gym included at 22% off, best-value harbour stay."
   },
   {
     "id": 2,
@@ -99,7 +101,9 @@
         "origPrice": 8500,
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.7分传奇顶奢，2680人认证的维港C位，直通K11 MUSEA，53㎡起大理石套房配黑卡礼遇，港岛顶级度假仪式感。",
+    "nudgeEn": "Legendary 9.7-rated ultra-luxury on Victoria Dockside with direct K11 MUSEA access — 53sqm+ marble rooms from $4,680 with Black Card privileges."
   },
   {
     "id": 3,
@@ -150,7 +154,9 @@
         "origPrice": 1820,
         "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.0分湾仔复古渡轮精品，地铁3分钟到会展，22㎡巧思设计+黄铜卫浴，千元出头住进香港设计师最爱的潮流地标。",
+    "nudgeEn": "Retro ferry-inspired boutique in Wan Chai, 3-min to MTR & HKCEC — 9.0-rated designer pick with brass bath and Italian breakfast at just $1,180."
   },
   {
     "id": 4,
@@ -201,7 +207,9 @@
         "origPrice": 1880,
         "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "5120条评价认证的尖东经典五星，中庭花园与星光大道6分钟即达，1080元含欧陆早餐带泳池，家庭与购物客的稳妥之选。",
+    "nudgeEn": "TST East classic 5-star loved by 5,120 guests, 6-min to Avenue of Stars with garden atrium — $1,080 with breakfast & pool, proven comfort."
   },
   {
     "id": 5,
@@ -252,7 +260,9 @@
         "origPrice": 7560,
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "中环心脏9.6分顶级奢华，直通中环站与置地广场，静谧套房式服务与米其林级餐饮，金融精英与奢华控的隐世首选。",
+    "nudgeEn": "9.6-rated ultra-luxury in Central's financial heart, direct to Central MTR & Landmark — serene suite-style service for true connoisseurs."
   },
   {
     "id": 6,
@@ -303,7 +313,9 @@
         "origPrice": 8100,
         "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.5分卓越尊贵，IFC直通+机场快线零换乘，米其林星级中菜与天际泳池加持，商务与度假皆满分的港岛地标。",
+    "nudgeEn": "9.5-rated icon linked to IFC & Airport Express, with Michelin-starred Cantonese and rooftop pool — the definitive Central luxury for business & leisure."
   },
   {
     "id": 7,
@@ -354,7 +366,9 @@
         "origPrice": 8480,
         "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "百年传奇9.7分，维港门面与劳斯莱斯车队的代名词，复古英式奢华与半岛下午茶，住一次就懂什么是香港。",
+    "nudgeEn": "Century-old legend rated 9.7, facing Victoria Harbour with Rolls-Royce fleet and iconic Peninsula Afternoon Tea — the definition of Hong Kong luxury."
   },
   {
     "id": 8,
@@ -405,7 +419,9 @@
         "origPrice": 7020,
         "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.6分都市静谧奢华，太古广场高空之上的禅意居所，270°金钟港湾全景+私人化服务，厌倦喧嚣人士的隐奢天堂。",
+    "nudgeEn": "9.6-rated urban sanctuary above Pacific Place, Zen-inspired with panoramic Admiralty harbour views — ultimate quiet luxury for the design-minded."
   },
   {
     "id": 9,
@@ -456,7 +472,9 @@
         "origPrice": 4520,
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "历史建筑重生的9.2分美利酒店，近山顶缆车与香港公园，白色极简主义+中环绿肺，文艺与商务兼得的网红地标。",
+    "nudgeEn": "9.2-rated heritage reinvention near Peak Tram & HK Park — minimalist white icon by Niccolo with heritage charm in the heart of Central."
   },
   {
     "id": 10,
@@ -507,7 +525,9 @@
         "origPrice": 3847,
         "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "金钟四线换乘枢纽上的9.1分豪华商务酒店，直通地铁与太古广场，行政酒廊夜景与高效会议配套，商务出行零负担。",
+    "nudgeEn": "9.1-rated luxury business hub directly linked to Admiralty's 4-line interchange & Pacific Place — lounge views and seamless meetings."
   },
   {
     "id": 11,
@@ -558,7 +578,9 @@
         "origPrice": 3710,
         "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "太古广场顶层的9.0分优质五星，开阔维港景观与经典英式下午茶，位置与视野兼得的中环常客首选。",
+    "nudgeEn": "9.0-rated 5-star atop Pacific Place with open Victoria Harbour views and classic British afternoon tea — Central's reliable luxury classic."
   },
   {
     "id": 12,
@@ -609,7 +631,9 @@
         "origPrice": 7020,
         "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.6分全球最高酒店之一，ICC 100层+云端OZONE酒吧与无边泳池，九龙站直达，住进云端的奢享体验。",
+    "nudgeEn": "9.6-rated icon in ICC, one of the world's highest hotels with OZONE bar & infinity pool — arrive via Kowloon Station, sleep in the clouds."
   },
   {
     "id": 13,
@@ -660,7 +684,9 @@
         "origPrice": 3888,
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.0分潮流地标W酒店，九龙站直连+西九文化区咫尺，霓虹夜场与DJ泳池派对，年轻潮人与艺术控的玩乐主场。",
+    "nudgeEn": "9.0-rated trendsetting W, direct to Kowloon Station & West Kowloon Cultural District — neon nightlife, DJ pool parties for the creative crowd."
   },
   {
     "id": 14,
@@ -711,7 +737,9 @@
         "origPrice": 3213,
         "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.2分红磡无遮挡维港度假酒店，黄埔站旁自带度假感与大露台，1880元享五星海滨度假氛围，城市中的度假村。",
+    "nudgeEn": "9.2-rated waterfront resort with unobstructed Hung Hom harbour views near Whampoa — resort terraces and sunset pool at $1,880."
   },
   {
     "id": 15,
@@ -762,7 +790,9 @@
         "origPrice": 3078,
         "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.1分欧式典雅代表，广东道奢品街与海港城一步之遥，粉色大堂与经典英式服务，尖沙咀购物控的优雅据点。",
+    "nudgeEn": "9.1-rated European elegance steps from Canton Road luxury & Harbour City — iconic pink lobby and Langham charm for TST shoppers."
   },
   {
     "id": 16,
@@ -813,7 +843,9 @@
         "origPrice": 2228,
         "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "8.7分地段王，马哥孛罗海港城直通、天星码头就在楼下，1280元住进维港购物第一线，游客与购物党性价比之选。",
+    "nudgeEn": "8.7-rated location king, directly linked to Harbour City with Star Ferry at doorstep — $1,280 for unbeatable TST shopping convenience."
   },
   {
     "id": 17,
@@ -864,7 +896,9 @@
         "origPrice": 3037,
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.0分经典典雅，尖东直面维港夜景的香格里拉，豪华大堂与马鞍山海景加持，商务与家庭都安心的老牌五星。",
+    "nudgeEn": "9.0-rated timeless Kowloon Shangri-La facing Victoria Harbour night views — grand lobby and classic luxury trusted by families & executives."
   },
   {
     "id": 18,
@@ -915,7 +949,9 @@
         "origPrice": 4860,
         "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.3分商务奢华标杆，直通会展中心与会展站，维港会展景观+格岚岛泳池，参展、看演唱会、商务会议一步到位。",
+    "nudgeEn": "9.3-rated business-luxury benchmark directly linked to HKCEC — harbour-view rooms and island pool, perfect for expos and conferences."
   },
   {
     "id": 19,
@@ -966,7 +1002,9 @@
         "origPrice": 2497,
         "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "8.9分对望跑马地马场的城市核心酒店，3分钟到时代广场与铜锣湾站，1450元五星含城景，赛马与购物兼得。",
+    "nudgeEn": "8.9-rated city-core hotel overlooking Happy Valley Racecourse, 3-min to Times Square & Causeway Bay MTR — $1,450 5-star with city buzz."
   },
   {
     "id": 20,
@@ -1017,7 +1055,9 @@
         "origPrice": 2403,
         "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "正对维多利亚公园的8.8分现代活力酒店，铜锣湾站咫尺，绿意与繁华的平衡，1380元享城市氧吧度假感。",
+    "nudgeEn": "8.8-rated modern hotel facing Victoria Park, steps from Causeway Bay MTR — green park views meets city energy at $1,380."
   },
   {
     "id": 21,
@@ -1068,7 +1108,9 @@
         "origPrice": 1728,
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "铜锣湾核心980元经典五星，欧陆古典装修+购物商圈零距离，全场最低价五星，精明出行者的省钱首选。",
+    "nudgeEn": "Classic 5-star in Causeway Bay core for just $980, European classic decor and shopping at your doorstep — the smartest budget-luxury pick."
   },
   {
     "id": 22,
@@ -1119,7 +1161,9 @@
         "origPrice": 2538,
         "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.2分旺角地标康得思，直通朗豪坊与旺角地铁站，顶楼无边泳池与米其林餐厅，吃喝玩乐一站式满分的潮流据点。",
+    "nudgeEn": "9.2-rated Cordis landmark, direct to Langham Place & Mong Kok MTR with rooftop infinity pool & Michelin dining — ultimate Mong Kok hub."
   },
   {
     "id": 23,
@@ -1170,7 +1214,9 @@
         "origPrice": 1998,
         "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.0分亲子舒适王，直通新世纪广场与旺角东站，大型商场+火车直达内地，1150元带泳池的家庭便利之选。",
+    "nudgeEn": "9.0-rated family comfort king, linked to Grand Century Place & Mong Kok East Station — $1,150 with pool, mall and direct mainland trains."
   },
   {
     "id": 24,
@@ -1221,7 +1267,9 @@
         "origPrice": 2362,
         "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "尖东海旁8.9分海滨优选，近红磡站与维港夜景，1350元享五星海滨漫步，出行与观景兼顾的稳妥之选。",
+    "nudgeEn": "8.9-rated harbourfront choice in TST East near Hung Hom Station — $1,350 5-star for easy promenade strolls and harbour views."
   },
   {
     "id": 25,
@@ -1272,7 +1320,9 @@
         "origPrice": 2943,
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.0分枢纽便利王，K11与尖沙咀/尖东双地铁直通，购物美食交通零死角，1680元住进尖沙咀最方便的十字路口。",
+    "nudgeEn": "9.0-rated transport king, direct to K11 & both TST / East TST MTR — $1,680 for unbeatable connectivity in Tsim Sha Tsui."
   },
   {
     "id": 26,
@@ -1323,7 +1373,9 @@
         "origPrice": 1998,
         "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "大学站旁8.9分山海度假，依山傍海绿意环抱的沙田凯悦，1180元逃离市区喧嚣，徒步、单车与自然的首选。",
+    "nudgeEn": "8.9-rated mountain-sea retreat near University Station — Hyatt Regency Sha Tin surrounded by greenery, $1,180 to escape the city."
   },
   {
     "id": 27,
@@ -1374,7 +1426,9 @@
         "origPrice": 1458,
         "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "城门河畔820元超高性价比商务酒店，石门站旁安静舒适，4星配套含健身泳池，沙田出差与性价比之王。",
+    "nudgeEn": "Super-value $820 business hotel by Shing Mun River near Shek Mun — 4-star with gym & pool, Sha Tin's best price-performance."
   },
   {
     "id": 28,
@@ -1425,7 +1479,9 @@
         "origPrice": 1552,
         "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "直通新城市广场的8.8分购物便捷酒店，沙田站零距离，880元四星含大型商场，家庭购物与换乘首选。",
+    "nudgeEn": "8.8-rated shopping convenience hotel linked to New Town Plaza & Sha Tin Station — $880 4-star with mega-mall at your doorstep."
   },
   {
     "id": 29,
@@ -1476,7 +1532,9 @@
         "origPrice": 1512,
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "湾仔美食区中心的8.6分法式连锁，860元四星近会展中心8分钟，免费取消+健身房，独行与美食探索的高性价比据点。",
+    "nudgeEn": "8.6-rated French chain in Wan Chai foodie core, 8-min to HKCEC — $860 4-star with free cancellation, ideal for solo foodies."
   },
   {
     "id": 30,
@@ -1527,7 +1585,9 @@
         "origPrice": 1377,
         "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "尖沙咀核心区790元出行便捷王，餐饮购物密集环绕，四星配套含泳池，背包客与短住客的超值据点。",
+    "nudgeEn": "790-valued convenience king in TST core, surrounded by eateries & shops — 4-star with pool, best value for short stays."
   },
   {
     "id": 31,
@@ -1578,7 +1638,9 @@
         "origPrice": 1323,
         "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "8.7分英伦简约风，紧邻太古广场三座与湾仔站，760元四星交通四通八达，年轻白领与中转客的精致小窝。",
+    "nudgeEn": "8.7-rated British minimalist near Three Pacific Place & Wan Chai MTR — $760 4-star with superb transport links."
   },
   {
     "id": 32,
@@ -1629,7 +1691,9 @@
         "origPrice": 2673,
         "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "SoHo好莱坞区的9.1分复古精品套房酒店，中环文艺酒吧街零距离，1580元住进设计师复古美学私宅。",
+    "nudgeEn": "9.1-rated retro boutique suite in SoHo Hollywood, steps from Central's artsy bars — $1,580 designer hideaway with vintage glam."
   },
   {
     "id": 33,
@@ -1680,7 +1744,9 @@
         "origPrice": 1012,
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "580元超高性价比王，上环码头与电车总站旁，高层开阔海景+3星灵活取消，港岛穷游与中转的宝藏之选。",
+    "nudgeEn": "Super-value $580 king by Sheung Wan Ferry & tram terminus, high-floor harbour views — unbeatable Central budget stay."
   },
   {
     "id": 34,
@@ -1731,7 +1797,9 @@
         "origPrice": 877,
         "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "490元全场最低价实用王，西营盘站旁高楼层宽阔视野，四星配套含免费取消，极致省钱仍要品质的务实之选。",
+    "nudgeEn": "Best budget $490 practical pick by Sai Ying Pun MTR, wide high-floor views with 4-star free-cancellation — cheapest quality stay."
   },
   {
     "id": 35,
@@ -1782,7 +1850,9 @@
         "origPrice": 2497,
         "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.3分网红无边际海景酒店，北角直面东区维港+顶楼泳池打卡，1450元五星海景，日落与泳池大片一键出片。",
+    "nudgeEn": "9.3-rated viral infinity harbour hotel in North Point, east Victoria Harbour views with rooftop infinity pool — $1,450 Instagram-ready."
   },
   {
     "id": 36,
@@ -1833,7 +1903,9 @@
         "origPrice": 2187,
         "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "太古城直通的9.1分潮流设计酒店，鲗鱼涌太古站零距离，现代轻奢风与智能客房，港岛东商务潮人的首选。",
+    "nudgeEn": "9.1-rated trendy design hotel linked to Cityplaza & Taikoo MTR — modern light-luxury with smart rooms for Island East creatives."
   },
   {
     "id": 37,
@@ -1884,7 +1956,9 @@
         "origPrice": 2228,
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "南区绿意环抱的8.9分悠闲度假酒店，远离喧嚣+宠物友好，1280元南区海景与数码港宁静，度假与带宠的隐世之选。",
+    "nudgeEn": "8.9-rated serene escape in Cyberport surrounded by sea & greenery, pet-friendly — $1,280 southside calm away from the buzz."
   },
   {
     "id": 38,
@@ -1935,7 +2009,9 @@
         "origPrice": 2808,
         "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.2分亲子度假首选，海洋公园站直达+超大礁湖泳池与儿童乐园，1580元一站式亲子度假，家庭客闭眼入。",
+    "nudgeEn": "9.2-rated family resort direct to Ocean Park MTR with huge lagoon pool & kids' club — $1,580 all-in-one family getaway."
   },
   {
     "id": 39,
@@ -1986,7 +2062,9 @@
         "origPrice": 4185,
         "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.3分南区奢华海滨，40㎡起全海景+无边际泳池，2350元五星海景度假村质感，追求宁静与度假感的升级之选。",
+    "nudgeEn": "9.3-rated luxury seafront in southside, 40sqm+ all-sea-view rooms with infinity pool — $2,350 resort-grade tranquillity."
   },
   {
     "id": 40,
@@ -2037,7 +2115,9 @@
         "origPrice": 2228,
         "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.0分机场度假首选，近国际机场与港珠澳大桥+免费穿梭巴士，1280元含自助早餐，中转与早机的省心之选。",
+    "nudgeEn": "9.0-rated airport resort near HKIA & HZMB with free shuttle — $1,280 with buffet breakfast, perfect for transits & early flights."
   },
   {
     "id": 41,
@@ -2088,7 +2168,9 @@
         "origPrice": 2362,
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "紧邻亚博馆的8.9分博览会与演唱会首选，机场旁+机场快线便利，1380元看展看秀零奔波的追星住宿王。",
+    "nudgeEn": "8.9-rated top pick for AsiaWorld-Expo & concerts next to airport — $1,380 for seamless show nights with Airport Express access."
   },
   {
     "id": 42,
@@ -2139,6 +2221,8 @@
         "origPrice": 9980,
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80"
       }
-    ]
+    ],
+    "nudgeZh": "9.8分全场最高分传奇云端奢华，中环海滨摩天轮与IFC直通，58㎡起米其林早餐+白玛瑙水疗卫浴，黑卡级天际体验。",
+    "nudgeEn": "Top-rated 9.8 legend of sky luxury on Central waterfront by Ferris wheel & IFC — 58sqm+ with Michelin breakfast & white agate spa bath, Black Card experience."
   }
 ]
