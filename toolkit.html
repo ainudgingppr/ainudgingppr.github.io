@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Nudge Concierge Toolkit - Exploring the Dual Effects of Artificial Intelligence Nudging on Sustainable Consumption in Hong Kong’s Tourism and Hospitality Industry.">
+    <title>AI Toolkit - Exploring the Dual Effects of Artificial Intelligence Nudging</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="site.webmanifest">
+    <script src="language.js" defer></script>
+    <style>
+        /* =========================================================
+           AI Toolkit Styles (Consistent with Project Layout)
+           ========================================================= */
+        .tk-view {
+            display: none;
+            animation: tkFadeIn 0.2s ease-in-out;
+        }
+
+        .tk-view.active {
+            display: block;
+        }
+
+        @keyframes tkFadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Action & Category Grid */
+        .tk-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        .tk-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        .tk-card {
+            background: rgba(15, 23, 42, 0.03);
+            border: 1px solid rgba(15, 23, 42, 0.14);
+            border-radius: 12px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .tk-card:hover {
+            transform: translateY(-3px);
+            border-color: #0284c7;
+            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);
+        }
+
+        .tk-card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .tk-card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .tk-card-desc {
+            font-size: 0.92rem;
+            opacity: 0.85;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Navigation & Header Bar inside Toolkit */
+        .tk-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tk-back-btn {
+            background: none;
+            border: 1px solid rgba(15, 23, 42, 0.2);
+            border-radius: 8px;
+            padding: 0.45rem 0.9rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: inherit;
+            transition: all 0.15s;
+        }
+
+        .tk-back-btn:hover {
+            border-color: #0284c7;
+            color: #0284c7;
+        }
+
+        .tk-preset-btn {
+            background-color: #0284c7;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .tk-preset-btn:hover {
+            background-color: #0369a1;
+        }
+
+        /* Form Controls */
+        .tk-form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .tk-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .tk-dropzone {
+            border: 2px dashed rgba(15, 23, 42, 0.25);
+            border-radius: 10px;
+            padding: 1.75rem 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+
+        .tk-dropzone:hover {
+            border-color: #0284c7;
+            background-color: rgba(2, 132, 199, 0.04);
+        }
+
+        .tk-dropzone input[type="file"] {
+            display: none;
+        }
+
+        .tk-file-status {
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: #0284c7;
+            font-weight: 600;
+        }
+
+        .tk-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 0.85rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(15, 23, 42, 0.25);
+            font-family: inherit;
+            font-size: 0.95rem;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        .tk-textarea:focus {
+            outline: none;
+            border-color: #0284c7;
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+        }
+
+        .tk-submit-btn {
+            width: 100%;
+            padding: 0.9rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            background-color: #0284c7;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .tk-submit-btn:hover:not(:disabled) {
+            background-color: #0369a1;
+        }
+
+        .tk-submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Result Output Box */
+        .tk-result-box {
+            margin-top: 1.75rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(15, 23, 42, 0.15);
+            display: none;
+        }
+
+        .tk-result-box.active {
+            display: block;
+        }
+
+        .tk-result-content {
+            background: rgba(15, 23, 42, 0.04);
+            border: 1px solid rgba(15, 23, 42, 0.14);
+            border-radius: 8px;
+            padding: 1.25rem;
+            white-space: pre-wrap;
+            line-height: 1.65;
+            font-size: 0.95rem;
+            margin-top: 0.75rem;
+        }
+
+        /* PWA Guide Modal */
+        .tk-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 1rem;
+        }
+
+        .tk-modal-overlay.active {
+            display: flex;
+        }
+
+        .tk-modal {
+            background: #ffffff;
+            color: #0f172a;
+            max-width: 480px;
+            width: 100%;
+            border-radius: 12px;
+            padding: 1.75rem;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .tk-modal h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .tk-modal ol {
+            padding-left: 1.25rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content"><span class="lang-en">Skip to content</span><span class="lang-zh">跳至主要內容</span></a>
+<div class="layout">
+    <aside class="sidebar" aria-label="Site navigation">
+        <div class="brand">
+            <div class="brand-wordmark">AI4Sustainability</div>
+            <div>
+                <div class="brand-title"><span class="lang-en">AI Nudging for Sustainable Consumer Behaviour</span><span class="lang-zh">人工智能助推與可持續消費行為</span></div>
+                <div class="brand-subtitle"><span class="lang-en">in the Tourism and Hospitality Industry in Hong Kong.</span><span class="lang-zh">香港旅遊及酒店業研究</span></div>
+            </div>
+        </div>
+        <a class="hkmu-logo-link" href="https://www.hkmu.edu.hk/" target="_blank" rel="noopener noreferrer" aria-label="Hong Kong Metropolitan University website">
+            <img class="hkmu-logo" src="assets/hkmu-logo.png" alt="Hong Kong Metropolitan University logo">
+        </a>
+        <div class="language-switch" aria-label="Language switch">
+            <button type="button" data-lang-button="en" aria-pressed="true">EN</button>
+            <button type="button" data-lang-button="zh-Hant" aria-pressed="false">繁中</button>
+            <button type="button" data-lang-button="zh-Hans" aria-pressed="false">简中</button>
+        </div>
+        <div class="nav-label"><span class="lang-en">Navigation</span><span class="lang-zh">導航</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首頁</span></a></li>
+                <li><a href="about.html"><span class="lang-en">About</span><span class="lang-zh">關於</span></a></li>
+                <li><a href="team.html"><span class="lang-en">Team</span><span class="lang-zh">團隊</span></a></li>
+                <li><a href="updates.html"><span class="lang-en">Updates</span><span class="lang-zh">項目進展</span></a></li>
+                <li><a href="impact.html"><span class="lang-en">Potential Impact</span><span class="lang-zh">潛在影響</span></a></li>
+                <li><a href="engage.html"><span class="lang-en">Engage</span><span class="lang-zh">合作交流</span></a></li>
+                <li><a class="active" aria-current="page" href="toolkit.html"><span class="lang-en">AI Toolkit</span><span class="lang-zh">AI 助推工具包</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content" id="main-content">
+        <!-- View 1: Toolkit Landing (Web vs Phone PWA) -->
+        <section id="tkLandingView" class="section panel tk-view active" aria-label="AI Nudge Concierge Toolkit">
+            <p class="eyebrow"><span class="lang-en">Interactive Decision Support</span><span class="lang-zh">互動決策輔助工具</span></p>
+            <h1>
+                <span class="en-title lang-en">AI Nudge Concierge Toolkit</span>
+                <span class="zh-title lang-zh">AI 助推智能推薦工具包</span>
+            </h1>
+            <p class="lede">
+                <span class="lang-en">An AI-powered recommendation engine designed to analyze custom product databases and natural language preferences across Grocery, Hotel, and Restaurant scenarios.</span>
+                <span class="lang-zh">專為雜貨購物、酒店住宿及餐飲場景設計的 AI 推薦系統，支援自訂 JSON 數據庫上傳與自然語言偏好分析。</span>
+            </p>
+
+            <div class="tk-grid-2">
+                <div class="tk-card" onclick="navigateTkView('tkCategoryView')">
+                    <div class="tk-card-icon">💻</div>
+                    <h2 class="tk-card-title">Use the Web Toolkit</h2>
+                    <p class="tk-card-desc">Open and use it directly in a browser on a laptop.</p>
+                </div>
+                <div class="tk-card" onclick="triggerPwaInstall()">
+                    <div class="tk-card-icon">📱</div>
+                    <h2 class="tk-card-title">Install on Your Phone</h2>
+                    <p class="tk-card-desc">Add the toolkit to a phone’s home screen as a Progressive Web App (PWA) and open it like an app.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- View 2: Category Selection (Grocery, Hotel, Restaurant) -->
+        <section id="tkCategoryView" class="section panel tk-view" aria-label="Select a Domain">
+            <div class="tk-topbar">
+                <button type="button" class="tk-back-btn" onclick="navigateTkView('tkLandingView')">← Back to Toolkit Intro</button>
+            </div>
+            <h2>Select a Domain</h2>
+            <p>Choose a consumption scenario to upload your dataset and configure user preferences.</p>
+
+            <div class="tk-grid-3">
+                <div class="tk-card" onclick="openTkForm('Grocery')">
+                    <div class="tk-card-icon">🛒</div>
+                    <h3 class="tk-card-title">Grocery</h3>
+                    <p class="tk-card-desc">Fresh food, pantry supplies, and sustainable store inventory.</p>
+                </div>
+                <div class="tk-card" onclick="openTkForm('Hotel')">
+                    <div class="tk-card-icon">🏨</div>
+                    <h3 class="tk-card-title">Hotel</h3>
+                    <p class="tk-card-desc">Accommodations, amenities, and room availability in Hong Kong.</p>
+                </div>
+                <div class="tk-card" onclick="openTkForm('Restaurant')">
+                    <div class="tk-card-icon">🍽️</div>
+                    <h3 class="tk-card-title">Restaurant</h3>
+                    <p class="tk-card-desc">Dining spots, dietary menus, and sustainable culinary choices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- View 3: Upload Database & User Preference Form -->
+        <section id="tkFormView" class="section panel tk-view" aria-label="Category Analysis">
+            <div class="tk-topbar">
+                <button type="button" class="tk-back-btn" onclick="navigateTkView('tkCategoryView')">← Back to Categories</button>
+                <button type="button" id="hotelPresetBtn" class="tk-preset-btn" style="display: none;" onclick="loadHotelTemplate()">
+                    Load Preset Hotel Database (template.json)
+                </button>
+            </div>
+
+            <h2 id="tkActiveCategoryTitle">Category Analysis</h2>
+
+            <form id="tkRecommendationForm" onsubmit="handleTkSubmit(event)">
+                <div class="tk-form-group">
+                    <label class="tk-label">1. Upload Database (.json format)</label>
+                    <div class="tk-dropzone" onclick="document.getElementById('tkDbFile').click()">
+                        <input type="file" id="tkDbFile" accept=".json" onchange="handleTkFileSelect(event)">
+                        <div id="tkDropzoneText">Click here to upload a .json database file</div>
+                        <div id="tkFileStatus" class="tk-file-status"></div>
+                    </div>
+                </div>
+
+                <div class="tk-form-group">
+                    <label class="tk-label" for="tkUserPreference">2. User Preference (Natural Language)</label>
+                    <textarea
+                            id="tkUserPreference"
+                            class="tk-textarea"
+                            placeholder="e.g., Recommend eco-friendly or high-rating options under HK$1,500 near Tsim Sha Tsui with breakfast included..."
+                            required
+                    ></textarea>
+                </div>
+
+                <button type="submit" id="tkSubmitBtn" class="tk-submit-btn">Confirm & Analyze</button>
+            </form>
+
+            <!-- AI Recommendation Result -->
+            <div id="tkResultSection" class="tk-result-box">
+                <div class="tk-topbar">
+                    <h3 style="margin: 0; color: #0284c7;">AI Recommendation Result</h3>
+                    <button type="button" class="tk-back-btn" onclick="navigateTkView('tkCategoryView')">← Analyze Another Category</button>
+                </div>
+                <div id="tkResultOutput" class="tk-result-content"></div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<!-- PWA Phone Installation Modal -->
+<div id="pwaModal" class="tk-modal-overlay" onclick="closePwaModal(event)">
+    <div class="tk-modal" onclick="event.stopPropagation()">
+        <h3>Install Toolkit on Your Phone</h3>
+        <p>To add this toolkit to your phone's home screen as an app:</p>
+        <strong>iOS (Safari):</strong>
+        <ol>
+            <li>Tap the <strong>Share</strong> button at the bottom of Safari.</li>
+            <li>Scroll down and tap <strong>Add to Home Screen</strong>.</li>
+        </ol>
+        <strong>Android (Chrome):</strong>
+        <ol>
+            <li>Tap the <strong>three-dot menu</strong> in the top right corner.</li>
+            <li>Tap <strong>Add to Home screen</strong> or <strong>Install app</strong>.</li>
+        </ol>
+        <button type="button" class="tk-submit-btn" onclick="closePwaModal()">Got It</button>
+    </div>
+</div>
+
+<script>
+    let currentCategory = "";
+    let parsedDatabase = null;
+    let deferredPwaPrompt = null;
+
+    // 監聽原生 PWA 安裝事件
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPwaPrompt = e;
+    });
+
+    // 切換視圖並更新 History 狀態（支援瀏覽器上一頁返回）
+    function showTkView(viewId) {
+        document.querySelectorAll('.tk-view').forEach(el => el.classList.remove('active'));
+        const targetEl = document.getElementById(viewId);
+        if (targetEl) targetEl.classList.add('active');
+    }
+
+    function navigateTkView(viewId) {
+        showTkView(viewId);
+        history.pushState({ viewId: viewId, category: currentCategory }, '', `#${viewId}`);
+    }
+
+    function openTkForm(category) {
+        currentCategory = category;
+        document.getElementById('tkActiveCategoryTitle').textContent = `${category} Recommendation`;
+
+        const presetBtn = document.getElementById('hotelPresetBtn');
+        presetBtn.style.display = (category === 'Hotel') ? 'inline-block' : 'none';
+
+        resetTkForm();
+        navigateTkView('tkFormView');
+    }
+
+    function resetTkForm() {
+        document.getElementById('tkRecommendationForm').reset();
+        document.getElementById('tkDropzoneText').textContent = "Click here to upload a .json database file";
+        document.getElementById('tkFileStatus').textContent = "";
+        document.getElementById('tkResultSection').classList.remove('active');
+        document.getElementById('tkResultOutput').textContent = "";
+        parsedDatabase = null;
+    }
+
+    function handleTkFileSelect(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        if (!file.name.endsWith('.json')) {
+            alert('Please select a valid .json file.');
+            event.target.value = '';
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                parsedDatabase = JSON.parse(e.target.result);
+                document.getElementById('tkDropzoneText').textContent = `Selected: ${file.name}`;
+                document.getElementById('tkFileStatus').textContent = `Loaded successfully (${(file.size / 1024).toFixed(1)} KB)`;
+            } catch (err) {
+                alert('Invalid JSON format in uploaded file.');
+                parsedDatabase = null;
+                event.target.value = '';
+            }
+        };
+        reader.readAsText(file);
+    }
+
+    async function loadHotelTemplate() {
+        const statusEl = document.getElementById('tkFileStatus');
+        statusEl.textContent = 'Loading template.json...';
+
+        try {
+            const res = await fetch('./template.json');
+            if (!res.ok) {
+                throw new Error(`Failed to fetch template.json (HTTP ${res.status})`);
+            }
+            const text = await res.text();
+            if (text.trim().startsWith('<')) {
+                throw new Error('template.json not found in root/output directory.');
+            }
+            parsedDatabase = JSON.parse(text);
+            document.getElementById('tkDropzoneText').textContent = 'Selected: template.json (Hong Kong 42 Hotels Preset)';
+            statusEl.textContent = `Loaded successfully (${parsedDatabase.length} hotels ready)`;
+
+            const prefInput = document.getElementById('tkUserPreference');
+            if (!prefInput.value.trim()) {
+                prefInput.value = 'Recommend a 5-star hotel in Tsim Sha Tsui under HK$2,000 with breakfast and harbour view.';
+            }
+        } catch (err) {
+            alert(`Error loading template: ${err.message}`);
+            statusEl.textContent = '';
+        }
+    }
+
+    async function handleTkSubmit(event) {
+        event.preventDefault();
+
+        if (!parsedDatabase) {
+            alert('Please upload a valid JSON database file (or load the preset template) first.');
+            return;
+        }
+
+        const userPreference = document.getElementById('tkUserPreference').value.trim();
+        const submitBtn = document.getElementById('tkSubmitBtn');
+        const resultSection = document.getElementById('tkResultSection');
+        const resultOutput = document.getElementById('tkResultOutput');
+
+        let productsArray = parsedDatabase;
+        if (!Array.isArray(parsedDatabase) && typeof parsedDatabase === 'object' && parsedDatabase !== null) {
+            productsArray = parsedDatabase.products || parsedDatabase.items || parsedDatabase.data || parsedDatabase.list || Object.values(parsedDatabase);
+        }
+
+        if (!Array.isArray(productsArray) || productsArray.length < 3) {
+            alert('The uploaded JSON database must contain at least 3 items.');
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Analyzing with AI...';
+        resultSection.classList.remove('active');
+        resultOutput.textContent = '';
+
+        try {
+            const apiEndpoint = window.location.hostname.includes('github.io')
+                ? 'https://ai-nudge-toolkit.vercel.app/api/recommend'
+                : '/api/recommend';
+
+            const response = await fetch(apiEndpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    products: productsArray,
+                    preferences: {
+                        category: currentCategory,
+                        details: userPreference
+                    }
+                })
+            });
+
+            const contentType = response.headers.get('content-type');
+            let data;
+            if (contentType && contentType.includes('application/json')) {
+                data = await response.json();
+            } else {
+                throw new Error(`Server returned unexpected status (${response.status})`);
+            }
+
+            if (!response.ok) {
+                throw new Error(data.error || `Server error: ${response.status}`);
+            }
+
+            resultOutput.textContent = data.recommendation;
+            resultSection.classList.add('active');
+        } catch (err) {
+            alert(`Failed to get recommendations: ${err.message}`);
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Confirm & Analyze';
+        }
+    }
+
+    async function triggerPwaInstall() {
+        if (deferredPwaPrompt) {
+            deferredPwaPrompt.prompt();
+            await deferredPwaPrompt.userChoice;
+            deferredPwaPrompt = null;
+        } else {
+            document.getElementById('pwaModal').classList.add('active');
+        }
+    }
+
+    function closePwaModal(event) {
+        if (!event || event.target.id === 'pwaModal') {
+            document.getElementById('pwaModal').classList.remove('active');
+        }
+    }
+
+    window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.viewId) {
+            showTkView(event.state.viewId);
+        } else {
+            showTkView('tkLandingView');
+        }
+    });
+</script>
+</body>
+</html>
