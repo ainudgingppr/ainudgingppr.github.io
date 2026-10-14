@@ -1,0 +1,12 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" }
+  ],
+  "outputDirectory": "dist",
+  "functions": {
+    "api/recommend.js": {
+      "maxDuration": 60
+    }
+  }
+}
