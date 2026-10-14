@@ -10,20 +10,60 @@
     <link rel="manifest" href="site.webmanifest">
     <script src="language.js" defer></script>
     <style>
-        /* Minimal layout utilities that inherit existing theme typography & colors */
+        /* Minimal layout utilities & text color resets to prevent white-on-light text */
         .tk-step {
             display: none;
         }
         .tk-step.active {
             display: block;
         }
+
+        /* 強制將淺色面板 (.panel) 內的所有文字與卡片改回系統預設深色，解決白字重疊問題 */
+        .panel,
+        .panel h2,
+        .panel h3,
+        .panel p,
+        .panel label,
+        .panel span,
+        .panel strong,
+        .panel div {
+            color: var(--text, #1e293b);
+        }
+
+        /* 覆寫原本屬於深色 Hero 的 .project-fact 樣式，使其在淺色 .panel 內清晰顯示 */
+        .panel .project-fact {
+            background: rgba(15, 23, 42, 0.03);
+            border: 1px solid rgba(15, 23, 42, 0.14);
+            color: var(--text, #1e293b);
+        }
+        .panel .project-fact strong,
+        .panel .project-fact span {
+            color: var(--text, #1e293b);
+        }
+
+        /* 確保次要按鈕在淺色面板上有清晰的深色文字與邊框 */
+        .panel .button:not(.primary) {
+            color: var(--text, #1e293b);
+            border: 1px solid rgba(15, 23, 42, 0.25);
+            background: transparent;
+        }
+        .panel .button.primary,
+        .panel .button.primary span {
+            color: #ffffff;
+        }
+
         .tk-Interactive-card {
             cursor: pointer;
-            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
         }
         .tk-Interactive-card:hover {
             transform: translateY(-2px);
         }
+        .panel .tk-Interactive-card:hover {
+            border-color: rgba(15, 23, 42, 0.4);
+            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+        }
+
         .tk-form-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -45,40 +85,49 @@
         .tk-textarea {
             width: 100%;
             padding: 0.7rem 0.85rem;
-            border: 1px solid rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(15, 23, 42, 0.25);
             border-radius: 6px;
             font: inherit;
-            background: rgba(255, 255, 255, 0.9);
-            color: inherit;
+            background: #ffffff;
+            color: var(--text, #1e293b);
             box-sizing: border-box;
+        }
+        .tk-input::placeholder,
+        .tk-textarea::placeholder {
+            color: #64748b;
+            opacity: 1;
         }
         .tk-textarea {
             min-height: 110px;
             resize: vertical;
         }
         .tk-file-zone {
-            border: 1.5px dashed rgba(0, 0, 0, 0.25);
+            border: 1.5px dashed rgba(15, 23, 42, 0.3);
             border-radius: 8px;
             padding: 1.25rem;
             text-align: center;
             cursor: pointer;
-            transition: background 0.15s ease;
+            background: rgba(15, 23, 42, 0.02);
+            color: var(--text, #1e293b);
+            transition: background 0.15s ease, border-color 0.15s ease;
         }
         .tk-file-zone:hover {
-            background: rgba(0, 0, 0, 0.02);
+            background: rgba(15, 23, 42, 0.05);
+            border-color: rgba(15, 23, 42, 0.5);
         }
         .tk-file-zone input[type="file"] {
             display: none;
         }
         .tk-meta-note {
             font-size: 0.85rem;
-            opacity: 0.75;
+            color: #475569 !important;
             margin-top: 0.25rem;
         }
         .tk-result-pre {
             white-space: pre-wrap;
             line-height: 1.7;
             margin-top: 0.75rem;
+            color: var(--text, #1e293b);
         }
         .tk-header-row {
             display: flex;
@@ -124,7 +173,7 @@
     </aside>
 
     <main class="content" id="main-content">
-        <!-- Hero Section (Matches index.html natively) -->
+        <!-- Hero Section -->
         <section class="hero" aria-label="AI Nudging Toolkit">
             <div class="hero-content">
                 <p class="eyebrow"><span class="lang-en">Interactive Research Instrument</span><span class="lang-zh">互動研究工具</span></p>
@@ -134,7 +183,7 @@
                 </h1>
                 <p class="lede">
                     <span class="lang-en">Prototype version — final version coming soon.</span>
-                    <span class="lang-zh">內部測試版本 - 正式版本即將推出。</span>
+                    <span class="lang-zh">內部測試版本 — 正式版本即將推出。</span>
                 </p>
                 <div class="project-facts" aria-label="Access modes">
                     <div class="project-fact tk-Interactive-card" onclick="goToStep('step-domains')">
@@ -159,7 +208,7 @@
             </div>
         </section>
 
-        <!-- PWA Install Instructions Section (Toggled when needed) -->
+        <!-- PWA Install Instructions Section -->
         <section id="pwa-guide-section" class="section tk-step" aria-label="PWA Installation Guide">
             <div class="panel">
                 <div class="tk-header-row">
@@ -183,7 +232,7 @@
             </div>
         </section>
 
-        <!-- Step 1: Domain Selection (Seamless Panel) -->
+        <!-- Step 1: Domain Selection -->
         <section id="step-domains" class="section tk-step active" aria-label="Select Consumption Domain">
             <div class="panel">
                 <h2><span class="lang-en">Select a Consumption Domain</span><span class="lang-zh">選擇消費研究場景</span></h2>
@@ -210,7 +259,7 @@
             </div>
         </section>
 
-        <!-- Step 2: Configuration & Analysis Workspace (Seamless Panel) -->
+        <!-- Step 2: Configuration & Analysis Workspace -->
         <section id="step-workspace" class="section tk-step" aria-label="AI Recommendation Workspace">
             <div class="panel">
                 <div class="tk-header-row">
@@ -236,7 +285,7 @@
                                 <span class="lang-zh">AI 模型供應商 (自帶金鑰 BYOK)</span>
                             </label>
                             <select id="aiProvider" class="tk-select" onchange="updateProviderPlaceholder()">
-                                <option value="gemini">Google Gemini (gemini-2.5-flash)</option>
+                                <option value="gemini">Google Gemini (gemini-3.5-flash)</option>
                                 <option value="hugging_face">Hugging Face (Qwen2.5-72B-Instruct)</option>
                             </select>
                         </div>
@@ -300,7 +349,7 @@
             </div>
         </section>
 
-        <!-- Step 3: Recommendation Output (Seamless Panel) -->
+        <!-- Step 3: Recommendation Output -->
         <section id="step-result" class="section tk-step" aria-label="AI Recommendation Output">
             <div class="panel">
                 <div class="tk-header-row">
@@ -356,9 +405,8 @@
         const presetBtn = document.getElementById('preset-hotel-btn');
         presetBtn.style.display = (category === 'Hotel') ? 'inline-flex' : 'none';
 
-        // Reset database state on domain switch
         document.getElementById('dbFile').value = '';
-        document.getElementById('dropzoneText').textContent = 'Click to select a .json file from your computer';
+        document.getElementById('dropzoneText').innerHTML = '<span class="lang-en">Click to select a .json file from your computer</span><span class="lang-zh">點擊此處從電腦選擇 .json 數據庫檔案</span>';
         document.getElementById('fileStatus').textContent = '';
         document.getElementById('step-result').classList.remove('active');
         parsedDatabase = null;
@@ -418,7 +466,6 @@
         }
     }
 
-    // Direct browser fallback for static hosting (e.g. GitHub Pages) when user provides BYOK key
     async function callProviderDirectlyFromClient(provider, apiKey, productsArray, preferences) {
         const simplifiedProducts = productsArray.map(p =>
             typeof p === 'string' ? p : JSON.stringify(p)
@@ -503,7 +550,6 @@
         try {
             let recommendationText = '';
 
-            // Try backend API first; if on static GitHub Pages with BYOK key, can also run directly
             const apiEndpoint = window.location.hostname.includes('github.io')
                 ? 'https://ai-nudge-toolkit.vercel.app/api/recommend'
                 : '/api/recommend';
@@ -531,7 +577,6 @@
                     throw new Error('Backend endpoint not available');
                 }
             } catch (backendErr) {
-                // If user supplied their own API Key, fallback to direct client-side call seamlessly
                 if (apiKey) {
                     recommendationText = await callProviderDirectlyFromClient(provider, apiKey, productsArray, preferencesPayload);
                 } else {
