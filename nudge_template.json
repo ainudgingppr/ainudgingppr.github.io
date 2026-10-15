@@ -1,0 +1,32 @@
+{
+  "Cherry Tomato": {
+    "personal_health": "If you're trying to eat a bit cleaner, you might like these. They are vine-ripened and hand-picked at peak ripeness, so you get more flavor without anything extra added.",
+    "eco_friendly": "If you care about how your food is grown, these are Fair Trade and Equitable Food Initiative (EFI) Certified, which means fair wages and safer working conditions for the farmworkers who picked them.",
+    "price": "If you're watching price, these are a smart pick. You get Fair Trade and Equitable Food Initiative (EFI) quality, vine-ripened and hand-picked, so they actually taste good and you end up using them instead of tossing them.",
+    "traditional": "If you want a solid everyday tomato, these are vine-ripened and hand-picked, and they are Fair Trade and Equitable Food Initiative (EFI) Certified, which means fair wages and safe working conditions. Good flavor, good all-round choice."
+  },
+  "Chicken Drumsticks": {
+    "personal_health": "If you want a cleaner everyday protein, these could work for you. No antibiotics, no added hormones, and the chickens are raised with space to explore outdoors.",
+    "eco_friendly": "If sustainability matters to you, these chickens are raised free to explore outdoors and the pack is made from 100 percent recyclable plastic, so less waste in the bin.",
+    "price": "If you're trying to keep costs down, this pack gives you higher welfare chicken without the usual markup. And because the packaging is 100 percent recyclable, you're not paying extra for wasteful plastic.",
+    "traditional": "These are your classic chicken drumsticks, no antibiotics and no added hormones, chickens raised with space to explore outdoors, and the packaging is 100 percent recyclable. A reliable option for family meals."
+  },
+  "Eggs": {
+    "personal_health": "If you want to know what you're eating, these are a good option. They come from hens with year-round outdoor access and you can trace your carton back to the farm.",
+    "eco_friendly": "If supporting better farming is important to you, these eggs are from hens with year-round outdoor access, they support the farmers who raise them that way, and you can trace them back to the farm.",
+    "price": "If price is what you're weighing most, these give you a lot for a weekly staple. Traceable, year-round outdoor access, and supporting farmers, so you get ethical quality that still makes sense for regular shopping.",
+    "traditional": "These are large brown eggs from hens with year-round outdoor access. They support farmers and you can trace them back to the farm, so you know where they come from. Works for everyday cooking."
+  },
+  "Strawberries": {
+    "personal_health": "If you're trying to cut down on residues, these might be worth a try. They contain at least 95 percent organic material and are grown to a certified standard.",
+    "eco_friendly": "If eco is top of mind for you, these strawberries are recognized by trusted sustainability certificates and contain at least 95 percent organic material, which is better for soil and pollinators.",
+    "price": "If you're watching your budget, think of these as paying for what you actually eat. At least 95 percent organic and certified, they tend to keep their flavor so you waste less.",
+    "traditional": "These are your everyday strawberries, they contain at least 95 percent organic material and have sustainability features recognized by trusted certificates. Sweet and familiar, grown with care."
+  },
+  "Greek Yogurt": {
+    "personal_health": "If you care about clean ingredients and gut-friendly foods, this one is slowly crafted with organic ingredients and made with United States Department of Agriculture (USDA) organic whole milk.",
+    "eco_friendly": "If sourcing matters to you, this yogurt is made with United States Department of Agriculture (USDA) organic whole milk and organic ingredients, which supports farms that avoid synthetic pesticides and take better care of the land.",
+    "price": "If you're balancing cost and quality, this tub goes a bit further. It's made with United States Department of Agriculture (USDA) organic whole milk and slowly crafted, so it's more filling and you need less to feel satisfied.",
+    "traditional": "This is traditional Greek yogurt, slowly crafted with organic ingredients and made with United States Department of Agriculture (USDA) organic whole milk. Creamy, simple, and good for everyday use."
+  }
+}

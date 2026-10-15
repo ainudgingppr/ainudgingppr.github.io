@@ -57,6 +57,7 @@
 
         /* 高對比主要按鈕樣式 */
         #submitBtn,
+        #nudgeConfirmBtn,
         .button.primary,
         .panel .button.primary {
             display: inline-flex !important;
@@ -76,6 +77,7 @@
         }
 
         #submitBtn:hover,
+        #nudgeConfirmBtn:hover,
         .button.primary:hover,
         .panel .button.primary:hover {
             background-color: var(--accent-blue-hover) !important;
@@ -83,7 +85,8 @@
             transform: translateY(-1px) !important;
         }
 
-        #submitBtn:disabled {
+        #submitBtn:disabled,
+        #nudgeConfirmBtn:disabled {
             background-color: #94a3b8 !important;
             border-color: #94a3b8 !important;
             box-shadow: none !important;
@@ -92,6 +95,7 @@
         }
 
         #submitBtn span,
+        #nudgeConfirmBtn span,
         .button.primary span {
             color: #ffffff !important;
         }
@@ -108,7 +112,73 @@
             box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
         }
 
-        /* Nudge Mode Switcher Tabs */
+        /* 5-Product Grid & JPG Image Styling */
+        .tk-product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.85rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .tk-product-card {
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.75rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .tk-product-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+        }
+        .tk-product-card.selected {
+            border-color: var(--accent-blue);
+            background: rgba(2, 132, 199, 0.06);
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.18);
+        }
+        .tk-product-img-wrapper {
+            width: 100%;
+            height: 96px;
+            border-radius: 6px;
+            overflow: hidden;
+            background: rgba(15, 23, 42, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tk-product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.2s ease;
+        }
+        .tk-product-card:hover .tk-product-img {
+            transform: scale(1.04);
+        }
+        .tk-product-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            line-height: 1.25;
+            color: var(--text);
+        }
+
+        .tk-option-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Mode Switcher Tabs */
         .tk-mode-tabs {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -134,7 +204,7 @@
         }
         .tk-mode-tab strong {
             display: block;
-            font-size: 1rem;
+            font-size: 0.98rem;
             margin-bottom: 0.25rem;
             color: var(--text);
         }
@@ -142,7 +212,7 @@
             color: var(--accent-blue);
         }
         .tk-mode-tab span {
-            font-size: 0.85rem;
+            font-size: 0.84rem;
             color: var(--text-muted);
         }
 
@@ -315,8 +385,8 @@
             <div class="hero-content">
                 <p class="eyebrow"><span class="lang-en">Interactive Research Instrument</span><span class="lang-zh">互動研究工具</span></p>
                 <h1>
-                    <span class="en-title lang-en">AI Nudging Recommendation Toolkit</span>
-                    <span class="zh-title lang-zh">人工智能助推推薦工具包</span>
+                    <span class="en-title lang-en">AI Nudging &amp; Recommendation Toolkit</span>
+                    <span class="zh-title lang-zh">人工智能助推與推薦工具包</span>
                 </h1>
                 <p class="lede">
                     <span class="lang-en">Prototype version — final version coming soon.</span>
@@ -346,10 +416,10 @@
         </section>
 
         <!-- PWA Install Instructions Section -->
-        <section id="pwa-guide-section" class="section tk-step" aria-label="PWA Installation Guide">
+        <section id="pwa-guide-section" class="section tk-step" aria-label="Web App Installation Guide">
             <div class="panel">
                 <div class="tk-header-row">
-                    <h2><span class="lang-en">Install on Your Phone (PWA)</span><span class="lang-zh">安裝至手機主畫面指引</span></h2>
+                    <h2><span class="lang-en">Install on Your Phone</span><span class="lang-zh">安裝至手機主畫面指引</span></h2>
                     <button type="button" class="button" onclick="document.getElementById('pwa-guide-section').classList.remove('active')">
                         <span class="lang-en">Close</span><span class="lang-zh">關閉</span>
                     </button>
@@ -369,51 +439,198 @@
             </div>
         </section>
 
-        <!-- Step 1: Domain Selection -->
-        <section id="step-domains" class="section tk-step active" aria-label="Select Consumption Domain">
+        <!-- ========================================================
+             Step 1: Module Selection (AI Nudge vs AI Recommendation)
+             ======================================================== -->
+        <section id="step-domains" class="section tk-step active" aria-label="Select Toolkit Module">
             <div class="panel">
-                <h2><span class="lang-en">Select a Consumption Domain</span><span class="lang-zh">選擇消費研究場景</span></h2>
-                <p class="lang-en">Choose a category below to compare AI-generated personalized nudges and traditional pre-configured nudges.</p>
-                <p class="lang-zh">請選擇以下任一消費場景，以體驗 AI 個人化助推或傳統預設助推訊息（Traditional Nudge）。</p>
+                <h2><span class="lang-en">Select a Toolkit Module</span><span class="lang-zh">選擇研究工具模組</span></h2>
+                <p class="lang-en">Choose between Grocery Shopping (AI Nudge) and Hotel Booking (AI Recommendation) to explore behavioral nudges.</p>
+                <p class="lang-zh">請選擇「Nudge（超市購物）」或「Recommendation（酒店訂房）」以進行實驗體驗。</p>
 
                 <div class="project-facts" style="margin-top: 1.25rem;">
-                    <div class="project-fact tk-Interactive-card" onclick="selectDomain('Grocery')">
-                        <strong><span class="lang-en">1. Grocery</span><span class="lang-zh">1. 超市雜貨 (Grocery)</span></strong>
-                        <span class="lang-en">Fresh produce, pantry supplies, eco-labeled goods, and daily retail inventory.</span>
-                        <span class="lang-zh">生鮮食品、日常雜貨、環保標籤產品及零售庫存數據分析。</span>
+                    <div class="project-fact tk-Interactive-card" onclick="openNudgeModule()">
+                        <strong><span class="lang-en">1. Nudge (Grocery Shopping)</span><span class="lang-zh">1. Nudge (超市購物)</span></strong>
+                        <span class="lang-en">Select from 5 grocery items and test traditional nudges, rule-based nudges, or custom AI-generated nudges.</span>
+                        <span class="lang-zh">從 5 款日常雜貨中選擇產品，體驗傳統助推、個人化助推或 AI 生成助推。</span>
                     </div>
-                    <div class="project-fact tk-Interactive-card" onclick="selectDomain('Hotel')">
-                        <strong><span class="lang-en">2. Hotel</span><span class="lang-zh">2. 酒店住宿 (Hotel)</span></strong>
-                        <span class="lang-en">Hospitality accommodations, room amenities, and sustainable stay options in Hong Kong.</span>
-                        <span class="lang-zh">香港酒店住宿、客房設施及可持續旅遊住宿方案分析。</span>
-                    </div>
-                    <div class="project-fact tk-Interactive-card" onclick="selectDomain('Restaurant')">
-                        <strong><span class="lang-en">3. Restaurant</span><span class="lang-zh">3. 餐飲美食 (Restaurant)</span></strong>
-                        <span class="lang-en">Dining establishments, plant-forward menus, and sustainable culinary choices.</span>
-                        <span class="lang-zh">餐廳食肆、低碳飲食菜單及可持續餐飲選擇分析。</span>
+                    <div class="project-fact tk-Interactive-card" onclick="openHotelModule()">
+                        <strong><span class="lang-en">2. Recommendation (Hotel)</span><span class="lang-zh">2. Recommendation (酒店訂房)</span></strong>
+                        <span class="lang-en">Upload a hotel database or use our template preset to experience AI recommendations.</span>
+                        <span class="lang-zh">上載酒店數據庫（.json）或載入香港 42 間酒店預設數據，對比 AI 個人化推薦與傳統預設助推。</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Step 2: Configuration & Nudge Workspace -->
-        <section id="step-workspace" class="section tk-step" aria-label="Nudge Workspace">
+        <!-- ========================================================
+             Module 1: AI Nudge (Grocery Shopping - 5 Products with JPG Images)
+             ======================================================== -->
+        <section id="step-nudge" class="section tk-step" aria-label="AI Nudge Workspace">
             <div class="panel">
                 <div class="tk-header-row">
-                    <h2 id="workspace-title" style="margin: 0;">Hotel Recommendation</h2>
-                    <div class="hero-actions" style="margin: 0;">
-                        <button type="button" id="preset-hotel-btn" class="button primary" style="display: none;" onclick="loadHotelTemplate()">
-                            <span class="lang-en">Load Sample Hotel Data (template.json)</span>
-                            <span class="lang-zh">載入預設酒店數據 (template.json)</span>
+                    <h2 style="margin: 0;">
+                        <span class="lang-en">AI Nudge — Grocery Shopping</span>
+                        <span class="lang-zh">AI Nudge — 超市雜貨助推</span>
+                    </h2>
+                    <button type="button" class="button" onclick="goToStep('step-domains')">
+                        <span class="lang-en">← Back to Modules</span>
+                        <span class="lang-zh">← 返回模組選擇</span>
+                    </button>
+                </div>
+
+                <!-- 1. Select 1 of 5 Products (Using actual JPG assets) -->
+                <div class="tk-field">
+                    <label>
+                        <span class="lang-en">Step 1: Select a Product (Choose 1 of 5)</span>
+                        <span class="lang-zh">步驟 1：選擇一項產品（5 選 1）</span>
+                    </label>
+                    <div id="nudgeProductGrid" class="tk-product-grid">
+                        <div class="tk-product-card selected" onclick="selectGroceryProduct('Cherry Tomato', this)">
+                            <div class="tk-product-img-wrapper">
+                                <img class="tk-product-img" src="assets/cherry_tomato.jpg" alt="Cherry Tomato" onerror="this.onerror=null; this.src='assets/cherry_tomato.jpg';">
+                            </div>
+                            <div class="tk-product-name">Cherry Tomato</div>
+                        </div>
+                        <div class="tk-product-card" onclick="selectGroceryProduct('Chicken Drumsticks', this)">
+                            <div class="tk-product-img-wrapper">
+                                <img class="tk-product-img" src="assets/chicken_drums.jpg" alt="Chicken Drumsticks" onerror="this.onerror=null; this.src='assets/chicken_drumsticks.jpg';">
+                            </div>
+                            <div class="tk-product-name">Chicken Drumsticks</div>
+                        </div>
+                        <div class="tk-product-card" onclick="selectGroceryProduct('Eggs', this)">
+                            <div class="tk-product-img-wrapper">
+                                <img class="tk-product-img" src="assets/eggs.jpg" alt="Eggs" onerror="this.onerror=null; this.src='assets/egg.jpg';">
+                            </div>
+                            <div class="tk-product-name">Eggs</div>
+                        </div>
+                        <div class="tk-product-card" onclick="selectGroceryProduct('Strawberries', this)">
+                            <div class="tk-product-img-wrapper">
+                                <img class="tk-product-img" src="assets/strawberries.jpg" alt="Strawberries" onerror="this.onerror=null; this.src='assets/strawberry.jpg';">
+                            </div>
+                            <div class="tk-product-name">Strawberries</div>
+                        </div>
+                        <div class="tk-product-card" onclick="selectGroceryProduct('Greek Yogurt', this)">
+                            <div class="tk-product-img-wrapper">
+                                <img class="tk-product-img" src="assets/yogurt.jpg" alt="Greek Yogurt" onerror="this.onerror=null; this.src='assets/greek_yogurt.jpg';">
+                            </div>
+                            <div class="tk-product-name">Greek Yogurt</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Select 1 of 5 Preference Options -->
+                <div class="tk-field">
+                    <label>
+                        <span class="lang-en">Step 2: Choose User Preference Mode (5 Options)</span>
+                        <span class="lang-zh">步驟 2：選擇用戶偏好模式</span>
+                    </label>
+                    <div class="tk-option-list">
+                        <button type="button" class="tk-mode-tab active" onclick="selectNudgeOption('traditional', this)">
+                            <strong>1. No Preference (Traditional Nudge)</strong>
+                            <span class="lang-en">Do not select or input preference; display standard all-round nudge.</span>
+                            <span class="lang-zh">沒有特定偏好（展示傳統預設助推訊息）。</span>
                         </button>
-                        <button type="button" class="button" onclick="goToStep('step-domains')">
-                            <span class="lang-en">← Change Domain</span>
-                            <span class="lang-zh">← 更換場景</span>
+                        <button type="button" class="tk-mode-tab" onclick="selectNudgeOption('personal_health', this)">
+                            <strong>2. Prioritize personal-health</strong>
+                            <span class="lang-en">Focus on clean ingredients, nutrition, and personal well-being.</span>
+                            <span class="lang-zh">聚焦天然成分與營養價值。</span>
+                        </button>
+                        <button type="button" class="tk-mode-tab" onclick="selectNudgeOption('eco_friendly', this)">
+                            <strong>3. Prioritize eco-friendly</strong>
+                            <span class="lang-en">Focus on Fair Trade, organic farming, and recyclable packaging.</span>
+                            <span class="lang-zh">聚焦有機耕作、動物福利與減塑包裝。</span>
+                        </button>
+                        <button type="button" class="tk-mode-tab" onclick="selectNudgeOption('price', this)">
+                            <strong>4. Prioritize price</strong>
+                            <span class="lang-en">Focus on cost-effectiveness, smart budgeting, and reducing food waste.</span>
+                            <span class="lang-zh">聚焦高性價比與減少浪費。</span>
+                        </button>
+                        <button type="button" class="tk-mode-tab" onclick="selectNudgeOption('custom', this)">
+                            <strong>5. Custom Natural Language Preference</strong>
+                            <span class="lang-en">Enter your own preference in natural language and generate via AI.</span>
+                            <span class="lang-zh">以自然語言自行輸入偏好，透過 AI 即時生成助推訊息。</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Step 2A: Database Upload (Shared by both AI Nudge & Traditional Nudge) -->
+                <!-- Custom AI Nudge Input Sub-panel (Only visible when Option 5 is selected) -->
+                <div id="customNudgeInputPanel" style="display: none; margin-top: 1rem;">
+                    <div class="tk-form-grid">
+                        <div class="tk-field" style="margin-bottom: 0;">
+                            <label for="nudgeAiProvider">
+                                <span class="lang-en">AI Provider</span>
+                                <span class="lang-zh">AI 模型供應商</span>
+                            </label>
+                            <select id="nudgeAiProvider" class="tk-select" onchange="updateNudgeProviderPlaceholder()">
+                                <option value="gemini">Google Gemini (gemini-3.5-flash)</option>
+                                <option value="hugging_face">Hugging Face (Qwen2.5-72B-Instruct)</option>
+                            </select>
+                        </div>
+                        <div class="tk-field" style="margin-bottom: 0;">
+                            <label for="nudgeUserApiKey">
+                                <span class="lang-en">API Key</span>
+                                <span class="lang-zh">API 金鑰</span>
+                            </label>
+                            <input
+                                    type="password"
+                                    id="nudgeUserApiKey"
+                                    class="tk-input"
+                                    placeholder="AIzaSy... "
+                                    autocomplete="off"
+                            >
+                        </div>
+                    </div>
+                    <p class="tk-meta-note" style="margin-bottom: 1.25rem;">
+                        <span class="lang-en">Privacy Note: Your API key is used strictly for the current request and is never stored on any server.</span>
+                        <span class="lang-zh">私隱聲明：您的 API 金鑰僅用於當次分析請求，絕不會被儲存於伺服器中。</span>
+                    </p>
+
+                    <div class="tk-field">
+                        <label for="nudgeCustomText">
+                            <span class="lang-en">Your Natural Language Preference</span>
+                            <span class="lang-zh">輸入您的自然語言偏好</span>
+                        </label>
+                        <textarea
+                                id="nudgeCustomText"
+                                class="tk-textarea"
+                                placeholder="e.g., I am preparing high-protein post-workout meals for my family and care about ethical farming..."
+                        ></textarea>
+                    </div>
+
+                    <div class="hero-actions">
+                        <button type="button" id="nudgeConfirmBtn" class="button primary" onclick="handleCustomNudgeGenerate()">
+                            <span class="lang-en">Confirm &amp; Generate AI Nudge</span>
+                            <span class="lang-zh">確認並生成 AI 助推訊息</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================
+             Module 2: AI Recommendation (Hotel Workspace)
+             ======================================================== -->
+        <section id="step-workspace" class="section tk-step" aria-label="Hotel Recommendation Workspace">
+            <div class="panel">
+                <div class="tk-header-row">
+                    <h2 id="workspace-title" style="margin: 0;">
+                        <span class="lang-en">AI Recommendation — Hotel</span>
+                        <span class="lang-zh">AI Recommendation — 酒店智能推薦</span>
+                    </h2>
+                    <div class="hero-actions" style="margin: 0;">
+                        <button type="button" id="preset-hotel-btn" class="button primary" onclick="loadHotelTemplate()">
+                            <span class="lang-en">Load Sample Hotel Data</span>
+                            <span class="lang-zh">載入預設酒店數據</span>
+                        </button>
+                        <button type="button" class="button" onclick="goToStep('step-domains')">
+                            <span class="lang-en">← Back to Modules</span>
+                            <span class="lang-zh">← 返回模組選擇</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 1: Database Upload -->
                 <div class="tk-field">
                     <label>
                         <span class="lang-en">1. Database File (.json format)</span>
@@ -429,44 +646,42 @@
                     </div>
                 </div>
 
-                <!-- Step 2B: Nudge Strategy Selector (AI Nudge vs Traditional Nudge) -->
+                <!-- Step 2: Mode Selector (AI Recommendation vs Traditional Nudge) -->
                 <div class="tk-field" style="margin-bottom: 0.5rem;">
                     <label>
-                        <span class="lang-en">2. Select Nudge Mode</span>
-                        <span class="lang-zh">2. 選擇助推模式 (Nudge Mode)</span>
+                        <span class="lang-en">2. Select Recommendation Mode</span>
+                        <span class="lang-zh">2. 選擇推薦模式</span>
                     </label>
                     <div class="tk-mode-tabs" role="tablist">
                         <button type="button" id="tab-ai-nudge" class="tk-mode-tab active" onclick="switchNudgeMode('ai')">
                             <strong>
-                                <span class="lang-en">✨ AI Nudge (Personalized)</span>
-                                <span class="lang-zh">✨ AI 智能助推 (個人化生成)</span>
+                                <span class="lang-en">✨ AI Recommendation (Personalized)</span>
+                                <span class="lang-zh">✨ AI 智能推薦 (個人化生成)</span>
                             </strong>
-                            <span class="lang-en">Analyze user preferences with LLM (Gemini / Hugging Face) to generate tailored reasoning.</span>
-                            <span class="lang-zh">透過 AI 模型分析自然語言偏好，即時生成客製化推薦理由。</span>
+                            <span class="lang-en">Analyze user preferences with LLM (Gemini / Hugging Face) to recommend up to 3 hotels.</span>
+                            <span class="lang-zh">透過 AI 模型分析自然語言偏好，從數據庫挑選最多 3 間酒店並生成推薦理由。</span>
                         </button>
                         <button type="button" id="tab-trad-nudge" class="tk-mode-tab" onclick="switchNudgeMode('traditional')">
                             <strong>
                                 <span class="lang-en">📋 Traditional Nudge (Pre-configured)</span>
                                 <span class="lang-zh">📋 傳統助推 (預設推薦語句)</span>
                             </strong>
-                            <span class="lang-en">Preview items in the database and inspect their pre-authored nudge messages (nudgeEn / nudgeZh).</span>
-                            <span class="lang-zh">在面板中預覽及選取項目，直接檢視數據庫內建的中英文助推語句。</span>
+                            <span class="lang-en">Preview hotels in the database and inspect their pre-authored nudge messages (nudgeEn / nudgeZh).</span>
+                            <span class="lang-zh">在面板中預覽及選取酒店，直接檢視數據庫內建的中英文助推語句。</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- ==========================================
-                     Mode A: AI Nudge Form
-                     ========================================== -->
+                <!-- Mode A: AI Recommendation Form -->
                 <form id="aiNudgePanel" onsubmit="handleFormSubmit(event)">
                     <div class="tk-form-grid">
                         <div class="tk-field" style="margin-bottom: 0;">
                             <label for="aiProvider">
-                                <span class="lang-en">AI Provider (Bring Your Own Key)</span>
-                                <span class="lang-zh">AI 模型供應商 (自帶金鑰 BYOK)</span>
+                                <span class="lang-en">AI Provider</span>
+                                <span class="lang-zh">AI 模型供應商</span>
                             </label>
                             <select id="aiProvider" class="tk-select" onchange="updateProviderPlaceholder()">
-                                <option value="gemini">Google Gemini (gemini-2.5-flash)</option>
+                                <option value="gemini">Google Gemini (gemini-3.5-flash)</option>
                                 <option value="hugging_face">Hugging Face (Qwen2.5-72B-Instruct)</option>
                             </select>
                         </div>
@@ -480,7 +695,7 @@
                                     type="password"
                                     id="userApiKey"
                                     class="tk-input"
-                                    placeholder="AIzaSy... (Leave blank to use server default if available)"
+                                    placeholder="AIzaSy..."
                                     autocomplete="off"
                             >
                         </div>
@@ -498,51 +713,47 @@
                         <textarea
                                 id="userPreference"
                                 class="tk-textarea"
-                                placeholder="e.g., Recommend up to 3 options in Tsim Sha Tsui under HK$2,000 with breakfast included and strong sustainability practices..."
+                                placeholder="e.g., Recommend up to 3 hotels in Tsim Sha Tsui under HK$2,000 with breakfast included and harbour views..."
                                 required
                         ></textarea>
                     </div>
 
                     <div class="hero-actions" style="margin-top: 1.5rem;">
                         <button type="submit" id="submitBtn" class="button primary">
-                            <span class="lang-en">Confirm & Generate AI Recommendation</span>
+                            <span class="lang-en">Confirm &amp; Generate AI Recommendation</span>
                             <span class="lang-zh">確認並生成 AI 推薦</span>
                         </button>
                     </div>
                 </form>
 
-                <!-- ==========================================
-                     Mode B: Traditional Nudge Interactive Preview Panel
-                     ========================================== -->
+                <!-- Mode B: Traditional Nudge Interactive Preview Panel -->
                 <div id="traditionalNudgePanel" style="display: none;">
                     <div class="tk-field" style="margin-bottom: 0.75rem;">
                         <label for="tradSearchInput">
-                            <span class="lang-en">Preview & Select an Item to Inspect its Nudge Message</span>
-                            <span class="lang-zh">預覽並點選下方項目以查看預設助推語句 (Nudge Message)</span>
+                            <span class="lang-en">Preview &amp; Select a Hotel to Inspect its Nudge Message</span>
+                            <span class="lang-zh">預覽並點選下方酒店以查看預設助推語句 (Nudge Message)</span>
                         </label>
                         <input
                                 type="search"
                                 id="tradSearchInput"
                                 class="tk-input"
-                                placeholder="Filter by name, district (e.g., 尖沙咀 / Central), or price..."
+                                placeholder="Filter by hotel name, district (e.g., 尖沙咀 / Central), or price..."
                                 oninput="renderTraditionalPreviewList()"
                         >
                     </div>
 
-                    <div id="tradPreviewContainer" class="tk-preview-grid">
-                        <!-- Dynamically populated cards -->
-                    </div>
+                    <div id="tradPreviewContainer" class="tk-preview-grid"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Step 3: Output Panel (Displays either AI Output or Selected Traditional Nudge) -->
-        <section id="step-result" class="section tk-step" aria-label="Recommendation Output">
+        <!-- Shared Output Panel -->
+        <section id="step-result" class="section tk-step" aria-label="Output Panel">
             <div class="panel">
                 <div class="tk-header-row">
                     <h2 id="resultPanelTitle" style="margin: 0;">
-                        <span class="lang-en">Recommendation Output</span>
-                        <span class="lang-zh">推薦分析結果</span>
+                        <span class="lang-en">Output Result</span>
+                        <span class="lang-zh">分析與助推結果</span>
                     </h2>
                     <span id="resultProviderBadge" class="eyebrow" style="margin: 0;"></span>
                 </div>
@@ -553,17 +764,271 @@
 </div>
 
 <script>
+    // =========================================================
+    // State & Preset Data
+    // =========================================================
     let currentCategory = "Hotel";
-    let currentNudgeMode = "ai"; // 'ai' or 'traditional'
+    let currentNudgeMode = "ai";
     let parsedDatabase = null;
     let selectedTradIndex = null;
     let deferredPwaPrompt = null;
+
+    let nudgeTemplateData = {
+        "Cherry Tomato": {
+            "personal_health": "If you're trying to eat a bit cleaner, you might like these. They are vine-ripened and hand-picked at peak ripeness, so you get more flavor without anything extra added.",
+            "eco_friendly": "If you care about how your food is grown, these are Fair Trade and Equitable Food Initiative (EFI) Certified, which means fair wages and safer working conditions for the farmworkers who picked them.",
+            "price": "If you're watching price, these are a smart pick. You get Fair Trade and Equitable Food Initiative (EFI) quality, vine-ripened and hand-picked, so they actually taste good and you end up using them instead of tossing them.",
+            "traditional": "If you want a solid everyday tomato, these are vine-ripened and hand-picked, and they are Fair Trade and Equitable Food Initiative (EFI) Certified, which means fair wages and safe working conditions. Good flavor, good all-round choice."
+        },
+        "Chicken Drumsticks": {
+            "personal_health": "If you want a cleaner everyday protein, these could work for you. No antibiotics, no added hormones, and the chickens are raised with space to explore outdoors.",
+            "eco_friendly": "If sustainability matters to you, these chickens are raised free to explore outdoors and the pack is made from 100 percent recyclable plastic, so less waste in the bin.",
+            "price": "If you're trying to keep costs down, this pack gives you higher welfare chicken without the usual markup. And because the packaging is 100 percent recyclable, you're not paying extra for wasteful plastic.",
+            "traditional": "These are your classic chicken drumsticks, no antibiotics and no added hormones, chickens raised with space to explore outdoors, and the packaging is 100 percent recyclable. A reliable option for family meals."
+        },
+        "Eggs": {
+            "personal_health": "If you want to know what you're eating, these are a good option. They come from hens with year-round outdoor access and you can trace your carton back to the farm.",
+            "eco_friendly": "If supporting better farming is important to you, these eggs are from hens with year-round outdoor access, they support the farmers who raise them that way, and you can trace them back to the farm.",
+            "price": "If price is what you're weighing most, these give you a lot for a weekly staple. Traceable, year-round outdoor access, and supporting farmers, so you get ethical quality that still makes sense for regular shopping.",
+            "traditional": "These are large brown eggs from hens with year-round outdoor access. They support farmers and you can trace them back to the farm, so you know where they come from. Works for everyday cooking."
+        },
+        "Strawberries": {
+            "personal_health": "If you're trying to cut down on residues, these might be worth a try. They contain at least 95 percent organic material and are grown to a certified standard.",
+            "eco_friendly": "If eco is top of mind for you, these strawberries are recognized by trusted sustainability certificates and contain at least 95 percent organic material, which is better for soil and pollinators.",
+            "price": "If you're watching your budget, think of these as paying for what you actually eat. At least 95 percent organic and certified, they tend to keep their flavor so you waste less.",
+            "traditional": "These are your everyday strawberries, they contain at least 95 percent organic material and have sustainability features recognized by trusted certificates. Sweet and familiar, grown with care."
+        },
+        "Greek Yogurt": {
+            "personal_health": "If you care about clean ingredients and gut-friendly foods, this one is slowly crafted with organic ingredients and made with United States Department of Agriculture (USDA) organic whole milk.",
+            "eco_friendly": "If sourcing matters to you, this yogurt is made with United States Department of Agriculture (USDA) organic whole milk and organic ingredients, which supports farms that avoid synthetic pesticides and take better care of the land.",
+            "price": "If you're balancing cost and quality, this tub goes a bit further. It's made with United States Department of Agriculture (USDA) organic whole milk and slowly crafted, so it's more filling and you need less to feel satisfied.",
+            "traditional": "This is traditional Greek yogurt, slowly crafted with organic ingredients and made with United States Department of Agriculture (USDA) organic whole milk. Creamy, simple, and good for everyday use."
+        }
+    };
+    let selectedGroceryProduct = "Cherry Tomato";
+    let selectedNudgeOption = "traditional";
+
+    window.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const res = await fetch('./nudge_template.json');
+            if (res.ok) {
+                const text = await res.text();
+                if (!text.trim().startsWith('<')) {
+                    nudgeTemplateData = JSON.parse(text);
+                }
+            }
+        } catch (e) {
+            // Fallback uses embedded nudgeTemplateData
+        }
+    });
 
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPwaPrompt = e;
     });
 
+    // =========================================================
+    // Navigation Helpers
+    // =========================================================
+    function goToStep(stepId) {
+        document.getElementById('step-domains').classList.remove('active');
+        document.getElementById('step-nudge').classList.remove('active');
+        document.getElementById('step-workspace').classList.remove('active');
+        if (stepId === 'step-domains') {
+            document.getElementById('step-result').classList.remove('active');
+        }
+        const target = document.getElementById(stepId);
+        if (target) {
+            target.classList.add('active');
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    function openNudgeModule() {
+        goToStep('step-nudge');
+        displayPresetGroceryNudge();
+    }
+
+    function openHotelModule() {
+        currentCategory = 'Hotel';
+        document.getElementById('step-result').classList.remove('active');
+        goToStep('step-workspace');
+    }
+
+    // =========================================================
+    // Module 1: AI Nudge (Grocery Shopping) Logic
+    // =========================================================
+    function selectGroceryProduct(productName, cardEl) {
+        selectedGroceryProduct = productName;
+        document.querySelectorAll('#nudgeProductGrid .tk-product-card').forEach(el => el.classList.remove('selected'));
+        if (cardEl) cardEl.classList.add('selected');
+
+        if (selectedNudgeOption !== 'custom') {
+            displayPresetGroceryNudge();
+        } else {
+            document.getElementById('step-result').classList.remove('active');
+        }
+    }
+
+    function selectNudgeOption(optionKey, btnEl) {
+        selectedNudgeOption = optionKey;
+        document.querySelectorAll('#step-nudge .tk-option-list .tk-mode-tab').forEach(el => el.classList.remove('active'));
+        if (btnEl) btnEl.classList.add('active');
+
+        const customPanel = document.getElementById('customNudgeInputPanel');
+        if (optionKey === 'custom') {
+            customPanel.style.display = 'block';
+            document.getElementById('step-result').classList.remove('active');
+        } else {
+            customPanel.style.display = 'none';
+            displayPresetGroceryNudge();
+        }
+    }
+
+    function updateNudgeProviderPlaceholder() {
+        const provider = document.getElementById('nudgeAiProvider').value;
+        const keyInput = document.getElementById('nudgeUserApiKey');
+        keyInput.placeholder = provider === 'gemini'
+            ? "AIzaSy... (Google AI Studio API Key)"
+            : "hf_... (Hugging Face User Access Token)";
+    }
+
+    function displayPresetGroceryNudge() {
+        const productObj = nudgeTemplateData[selectedGroceryProduct] || {};
+        const message = productObj[selectedNudgeOption] || "No nudge message available for this option.";
+
+        const labelMap = {
+            traditional: "No Preference (Traditional Nudge)",
+            personal_health: 'Prioritize personal-health',
+            eco_friendly: 'Prioritize eco-friendly',
+            price: 'Prioritize product price'
+        };
+
+        const resultSection = document.getElementById('step-result');
+        const resultOutput = document.getElementById('resultOutput');
+        const badge = document.getElementById('resultProviderBadge');
+
+        badge.textContent = `${selectedGroceryProduct} — ${labelMap[selectedNudgeOption] || selectedNudgeOption}`;
+        resultOutput.innerHTML = `
+            <div>
+                <h3 style="margin-top: 0; margin-bottom: 0.35rem;">${selectedGroceryProduct}</h3>
+                <div class="tk-nudge-highlight">${message}</div>
+            </div>
+        `;
+        resultSection.classList.add('active');
+    }
+
+    async function callNudgeProviderDirectlyFromClient(provider, apiKey, product, productInfo, userPreference) {
+        const promptText = `You are an expert in behavioral economics and ethical AI nudging for grocery shopping.\n\nProduct Selected: "${product}"\nReference Product Attributes & Context: ${JSON.stringify(productInfo || {})}\nUser's Natural Language Preference: "${userPreference}"\n\nTask:\nWrite a concise, natural, and persuasive 2-to-3 sentence nudge message for this product tailored specifically to the user's preference, grounded in the product's real attributes.\n\nRules:\nOutput PLAIN TEXT only. No markdown, no quotes, no bullet points, and no extra explanation.`;
+
+        if (provider === 'gemini') {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
+            const res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ contents: [{ parts: [{ text: promptText }] }] })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error?.message || `Gemini API Error (${res.status})`);
+            return data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || 'No response generated.';
+        }
+
+        if (provider === 'hugging_face') {
+            const url = 'https://router.huggingface.co/v1/chat/completions';
+            const res = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: 'Qwen/Qwen2.5-72B-Instruct',
+                    messages: [{ role: 'user', content: promptText }],
+                    max_tokens: 300
+                })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error?.message || data.error || `Hugging Face API Error (${res.status})`);
+            return data.choices?.[0]?.message?.content?.trim() || 'No response generated.';
+        }
+    }
+
+    async function handleCustomNudgeGenerate() {
+        const provider = document.getElementById('nudgeAiProvider').value;
+        const apiKey = document.getElementById('nudgeUserApiKey').value.trim();
+        const userPref = document.getElementById('nudgeCustomText').value.trim();
+        const confirmBtn = document.getElementById('nudgeConfirmBtn');
+        const resultSection = document.getElementById('step-result');
+        const resultOutput = document.getElementById('resultOutput');
+        const badge = document.getElementById('resultProviderBadge');
+
+        if (!userPref) {
+            alert('Please enter your natural language preference.');
+            return;
+        }
+
+        const productInfo = nudgeTemplateData[selectedGroceryProduct] || {};
+
+        confirmBtn.disabled = true;
+        confirmBtn.textContent = 'Generating AI Nudge...';
+        resultSection.classList.remove('active');
+
+        try {
+            let nudgeText = '';
+            const apiEndpoint = window.location.hostname.includes('github.io')
+                ? 'https://ai-nudge-toolkit.vercel.app/api/nudge'
+                : '/api/nudge';
+
+            try {
+                const response = await fetch(apiEndpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        provider: provider,
+                        apiKey: apiKey,
+                        product: selectedGroceryProduct,
+                        productInfo: productInfo,
+                        userPreference: userPref
+                    })
+                });
+
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.includes('application/json')) {
+                    const data = await response.json();
+                    if (!response.ok) throw new Error(data.error || `Server error (${response.status})`);
+                    nudgeText = data.nudge;
+                } else {
+                    throw new Error('Backend /api/nudge endpoint not available');
+                }
+            } catch (backendErr) {
+                if (apiKey) {
+                    nudgeText = await callNudgeProviderDirectlyFromClient(provider, apiKey, selectedGroceryProduct, productInfo, userPref);
+                } else {
+                    throw backendErr;
+                }
+            }
+
+            badge.textContent = `${selectedGroceryProduct} — Custom AI Nudge (${provider === 'gemini' ? 'Google Gemini' : 'Hugging Face'})`;
+            resultOutput.innerHTML = `
+                <div>
+                    <h3 style="margin-top: 0; margin-bottom: 0.35rem;">${selectedGroceryProduct}</h3>
+                    <p class="tk-meta-note" style="margin-bottom: 0.75rem;"><strong>User Preference:</strong> ${userPref}</p>
+                    <div class="tk-nudge-highlight">${nudgeText}</div>
+                </div>
+            `;
+            resultSection.classList.add('active');
+            resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } catch (err) {
+            alert(`Failed to generate AI nudge: ${err.message}`);
+        } finally {
+            confirmBtn.disabled = false;
+            confirmBtn.innerHTML = '<span class="lang-en">Confirm &amp; Generate AI Nudge</span><span class="lang-zh">確認並生成 AI 助推訊息</span>';
+        }
+    }
+
+    // =========================================================
+    // Module 2: AI Recommendation (Hotel) Logic
+    // =========================================================
     function getProductsArray() {
         if (!parsedDatabase) return [];
         if (Array.isArray(parsedDatabase)) return parsedDatabase;
@@ -576,42 +1041,9 @@
     function updateProviderPlaceholder() {
         const provider = document.getElementById('aiProvider').value;
         const keyInput = document.getElementById('userApiKey');
-        if (provider === 'gemini') {
-            keyInput.placeholder = "AIzaSy... (Google AI Studio API Key)";
-        } else {
-            keyInput.placeholder = "hf_... (Hugging Face User Access Token)";
-        }
-    }
-
-    function goToStep(stepId) {
-        document.getElementById('step-domains').classList.remove('active');
-        document.getElementById('step-workspace').classList.remove('active');
-        if (stepId === 'step-domains') {
-            document.getElementById('step-result').classList.remove('active');
-        }
-        const target = document.getElementById(stepId);
-        if (target) {
-            target.classList.add('active');
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }
-
-    function selectDomain(category) {
-        currentCategory = category;
-        document.getElementById('workspace-title').textContent = `${category} Recommendation`;
-
-        const presetBtn = document.getElementById('preset-hotel-btn');
-        presetBtn.style.display = (category === 'Hotel') ? 'inline-flex' : 'none';
-
-        document.getElementById('dbFile').value = '';
-        document.getElementById('dropzoneText').innerHTML = '<span class="lang-en">Click to select a .json file from your computer (or click "Load Sample Hotel Data" above)</span><span class="lang-zh">點擊此處從電腦選擇 .json 數據庫檔案（或點擊上方「載入預設酒店數據」）</span>';
-        document.getElementById('fileStatus').textContent = '';
-        document.getElementById('step-result').classList.remove('active');
-        parsedDatabase = null;
-        selectedTradIndex = null;
-
-        renderTraditionalPreviewList();
-        goToStep('step-workspace');
+        keyInput.placeholder = provider === 'gemini'
+            ? "AIzaSy... (Google AI Studio API Key)"
+            : "hf_... (Hugging Face User Access Token)";
     }
 
     function switchNudgeMode(mode) {
@@ -630,8 +1062,7 @@
             aiPanel.style.display = 'none';
             tradPanel.style.display = 'block';
 
-            // 若在 Hotel 場景且尚未載入數據，自動載入 template.json 方便直接預覽
-            if (!parsedDatabase && currentCategory === 'Hotel') {
+            if (!parsedDatabase) {
                 loadHotelTemplate();
             } else {
                 renderTraditionalPreviewList();
@@ -673,16 +1104,16 @@
 
     async function loadHotelTemplate() {
         const statusEl = document.getElementById('fileStatus');
-        statusEl.textContent = 'Loading template.json...';
+        statusEl.textContent = 'Loading hotel_template.json...';
 
         try {
-            const res = await fetch('./template.json');
+            const res = await fetch('./hotel_template.json');
             if (!res.ok) {
-                throw new Error(`Failed to fetch template.json (HTTP ${res.status})`);
+                throw new Error(`Failed to fetch hotel_template.json (HTTP ${res.status})`);
             }
             const text = await res.text();
             if (text.trim().startsWith('<')) {
-                throw new Error('template.json not found in root directory.');
+                throw new Error('hotel_template.json not found in root directory.');
             }
             parsedDatabase = JSON.parse(text);
             document.getElementById('dropzoneText').textContent = 'Selected: template.json (Hong Kong 42 Hotels Preset)';
@@ -701,7 +1132,6 @@
         }
     }
 
-    // 渲染 Traditional Nudge 的預覽選取清單
     function renderTraditionalPreviewList() {
         const container = document.getElementById('tradPreviewContainer');
         const items = getProductsArray();
@@ -753,7 +1183,6 @@
         }).join('');
     }
 
-    // 點選某間酒店後，於結果面板展示其 nudgeEn / nudgeZh 推薦語句
     function selectTraditionalItem(idx) {
         selectedTradIndex = idx;
         renderTraditionalPreviewList();
@@ -818,14 +1247,10 @@
             const res = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    contents: [{ parts: [{ text: promptText }] }]
-                })
+                body: JSON.stringify({ contents: [{ parts: [{ text: promptText }] }] })
             });
             const data = await res.json();
-            if (!res.ok) {
-                throw new Error(data.error?.message || `Gemini API Error (${res.status})`);
-            }
+            if (!res.ok) throw new Error(data.error?.message || `Gemini API Error (${res.status})`);
             return data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || 'No response generated.';
         }
 
@@ -844,9 +1269,7 @@
                 })
             });
             const data = await res.json();
-            if (!res.ok) {
-                throw new Error(data.error?.message || data.error || `Hugging Face API Error (${res.status})`);
-            }
+            if (!res.ok) throw new Error(data.error?.message || data.error || `Hugging Face API Error (${res.status})`);
             return data.choices?.[0]?.message?.content?.trim() || 'No response generated.';
         }
     }
@@ -886,7 +1309,6 @@
 
         try {
             let recommendationText = '';
-
             const apiEndpoint = window.location.hostname.includes('github.io')
                 ? 'https://ai-nudge-toolkit.vercel.app/api/recommend'
                 : '/api/recommend';
@@ -906,9 +1328,7 @@
                 const contentType = response.headers.get('content-type');
                 if (contentType && contentType.includes('application/json')) {
                     const data = await response.json();
-                    if (!response.ok) {
-                        throw new Error(data.error || `Server error (${response.status})`);
-                    }
+                    if (!response.ok) throw new Error(data.error || `Server error (${response.status})`);
                     recommendationText = data.recommendation;
                 } else {
                     throw new Error('Backend endpoint not available');
@@ -921,7 +1341,7 @@
                 }
             }
 
-            badge.textContent = provider === 'gemini' ? 'Mode: AI Nudge (Google Gemini)' : 'Mode: AI Nudge (Hugging Face)';
+            badge.textContent = provider === 'gemini' ? 'Mode: AI Recommendation (Google Gemini)' : 'Mode: AI Recommendation (Hugging Face)';
             resultOutput.textContent = recommendationText;
             resultSection.classList.add('active');
             resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -929,7 +1349,7 @@
             alert(`Failed to get recommendations: ${err.message}`);
         } finally {
             submitBtn.disabled = false;
-            submitBtn.innerHTML = '<span class="lang-en">Confirm & Generate AI Recommendation</span><span class="lang-zh">確認並生成 AI 推薦</span>';
+            submitBtn.innerHTML = '<span class="lang-en">Confirm &amp; Generate AI Recommendation</span><span class="lang-zh">確認並生成 AI 推薦</span>';
         }
     }
 

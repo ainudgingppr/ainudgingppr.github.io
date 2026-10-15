@@ -18,9 +18,11 @@ app.use(express.static(path.join(__dirname)));
 
 // 匯入你剛改好的 API 邏輯
 const recommendHandler = require('./api/recommend');
+const nudgeHandler = require('./api/nudge');
 
 // 路由設定 (對應原本 Vercel 的 API 路徑)
 app.use('/api/recommend', (req, res) => recommendHandler(req, res));
+app.use('/api/nudge', (req, res) => nudgeHandler(req, res));
 
 app.listen(PORT, () => {
     console.log(`=================================`);
